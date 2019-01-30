@@ -359,6 +359,39 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/docker-apps/">
+            
+                <span>docker-apps</span>
+        </a>
+        <div class="abstract-content">
+            搭建一个个人博客：https://www.jianshu.com/p/3c6c9d964cb4docker run –name mysql-01 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysqldocker run –name wp -p 80:80 –link mysql-01:mysql -d wordpress然后 ifconfig 查看下本机的ip（或者直接用127.0.0.1也可），然后打开浏览器输入 :80 即可看到wordpress的安装界面，设置完成用户名和密码即可进入posts–&gt;add new 就是发布新文章（因为...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
             
                 <span>printf-可变参数</span>
@@ -652,39 +685,6 @@ Have you ever peeked into the source code of any of the applications you run eve
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="p4">p4</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/static-dynamic-library/">
-            
-                <span>static-dynamic-library</span>
-        </a>
-        <div class="abstract-content">
-            1.linux下.a与.so文件：
-.a文件是静态链接库，一般生成的时候所需的所有依赖都在其中（所以.a文件通常比较大），使用.a文件的binary会将其当作普通.o文件一样完全拷贝至binary(link也可)，运行时不需要.a文件在场
-.so文件是共享链接库，一般生成的时候只包括本project，不会将依赖的库拷贝（即大多也是使用的.so，所以.so文件通常比较小），使用.so的binary可以在compile时候（只是检查一下并记录函数位置）或者运行时将.so加载，运行时需要.so文件在场
-
-2.别人提供了.a/.so文件，如何使用？（.so）makefile，link时，-L -...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
     
 </div>
             
@@ -1134,9 +1134,26 @@ Have you ever peeked into the source code of any of the applications you run eve
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -1158,6 +1175,11 @@ Have you ever peeked into the source code of any of the applications you run eve
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-apps/">docker-apps</a>
         </li>
     
     
@@ -1227,12 +1249,12 @@ Have you ever peeked into the source code of any of the applications you run eve
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
         </li>
     
     
@@ -1286,11 +1308,11 @@ Have you ever peeked into the source code of any of the applications you run eve
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
-    
-        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     

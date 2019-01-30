@@ -346,6 +346,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/docker-apps/">
+            
+                <span>docker-apps</span>
+        </a>
+        <div class="abstract-content">
+            搭建一个个人博客：https://www.jianshu.com/p/3c6c9d964cb4docker run –name mysql-01 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysqldocker run –name wp -p 80:80 –link mysql-01:mysql -d wordpress然后 ifconfig 查看下本机的ip（或者直接用127.0.0.1也可），然后打开浏览器输入 :80 即可看到wordpress的安装界面，设置完成用户名和密码即可进入posts–&gt;add new 就是发布新文章（因为...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
             
                 <span>printf-可变参数</span>
@@ -636,46 +669,6 @@ Have you ever peeked into the source code of any of the applications you run eve
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/vim/">
-            
-                <span>vim</span>
-        </a>
-        <div class="abstract-content">
-            12&lt;&lt;  向左缩进&gt;&gt;  向左缩进
-1、vim命令mode下快捷命令（插入mode——ESC—–&gt;命令mode）：（命令mode——   i  —–&gt;插入mode）：
-
-/name 从光标开始处向文件尾搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）
-?name 从光标开始处向文件头搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）（这个不常用）
-u 取消前一个操作（相当于撤销）
-[n]yy 拷贝当前开始的n行（省略n则只拷贝当前行）
-[n]dd 删除当前开始的n行（省略n则只删除当前行）
-p 粘帖
-:xx  执...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
     
 </div>
             
@@ -1039,9 +1032,26 @@ p 粘帖
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 23
+        Total : 24
         </div>
         <!-- search  -->
         
@@ -1063,6 +1073,11 @@ p 粘帖
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-apps/">docker-apps</a>
         </li>
     
     
@@ -1132,12 +1147,12 @@ p 粘帖
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
         </li>
     
     
@@ -1191,11 +1206,11 @@ p 粘帖
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
-    
-        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
