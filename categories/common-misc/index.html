@@ -346,6 +346,111 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
+            
+                <span>printf-可变参数</span>
+        </a>
+        <div class="abstract-content">
+            12345typedef char *va_list;   //va_list就是个普通的指向char类型的指针而已#define _INTSIZEOF(n)   (  (sizeof(n)+sizeof(int)-1)&amp; ~(sizeof(int)-1)  ) //这是获取某个类型的长度，并按照int长度为边界对齐，不足4bytes补足，因为栈宽度为4bytes#define va_start(ap,v)  (ap=(va_list)&amp;v + _INTSIZEOF(v)) //这就是使ap指向v的以int长度为边界的后一个位置#define va_arg(ap, typ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="printf 可变参数">printf 可变参数</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/cmake/">
+            
+                <span>cmake</span>
+        </a>
+        <div class="abstract-content">
+            #Cmake自动构建工具，在当前目录下创建 CmakeLists.txt 和 build 目录
+#cd build 目录后执行 cmake .. （../ 下必须存在一个名为 CmakeLists.txt 的文件）即可
+#定义工程名字 HELLO，会自动隐式创建两个变量 HELLO_BINARY_DIR 和  HELLO_SOURCE_DIRPROJECT (HELLO)SET(SRC_LIST aes-cmac.c TI_aes_128.c)
+#XXX_BINARY_DIR 一般就是 cmake 执行时候的目录。变量的引用必须 ${ }（IF 语句是唯一的例外）MESSAGE(STAT...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/杂谈/">
+            
+                <span>杂谈</span>
+        </a>
+        <div class="abstract-content">
+            关于画图
+uml类图, startUML 看起来还不错,但是我想画的并不是标准的类图,而是随心所欲的数据结构图, https://www.cnblogs.com/shindo/p/5579191.html
+process on,在线做图,傻瓜式,但是功能少
+draw.io,目前发现的最适合我的画图软件,支持和github帐号绑定,从github sync非常赞,创建的时候选择 软件（程序员）, 这里可以下载draw.io的离线版本. linux的离线版本可能有点问题，使用minphone的方法，先将star-uml的tar.gz包解压，然后将window下exe安装后的C:\Progra...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="draw.io">draw.io</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vscode">vscode</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="office2016 密钥">office2016 密钥</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/docker-hub/">
             
                 <span>docker-hub</span>
@@ -363,9 +468,9 @@
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
             
@@ -397,9 +502,9 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
             
@@ -431,9 +536,9 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
     
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
     
 </div>
             
@@ -571,141 +676,6 @@ p 粘帖
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/使用github/">
-            
-                <span>使用github</span>
-        </a>
-        <div class="abstract-content">
-            使用github作为自己的服务器settings进入管理，里面有自己的各种仓库和ssh keys（配置了ssh-key之后理论上通过ssh 方式 clone的自己的仓库就不再需要每次上传都需要密码了，这一点与通过https方式clone的仓库是有区别的）。
-
-your profile进入自己的首页。
-点击左上github图标则创建新的空仓库(或者+号)。
-进入别人的仓库，然后fork则相当于git clone。
-进入自己的某个项目后点击setting，options里含有删除本仓库的选项。
-collaborators则可以添加协作开发者
-
-探索github：explore-&gt;Tre...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
-            
-                <span>gdb</span>
-        </a>
-        <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
-
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/git/">
-            
-                <span>git</span>
-        </a>
-        <div class="abstract-content">
-            1.config git账户123git config --global user.email fridayfang@zhaoxin.comgit config --global user.name fridayfanggit config -e    查看git 的一些配置信息
-以后这个将作为git commit 的签名，upload还需要ssh的public key (直接 ssh-keygen)，类似github的上传，添加collaborator需要对方的邮箱一样
-2.git仓库的创建
-git init 在当前目录下初始化一个git仓库
-git init  --bare 初始化一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
     
 </div>
             
@@ -1029,9 +999,49 @@ git init  --bare 初始化一...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 23
         </div>
         <!-- search  -->
         
@@ -1047,7 +1057,27 @@ git init  --bare 初始化一...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/printf-可变参数/">printf-可变参数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-hub/">docker-hub</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/杂谈/">杂谈</a>
         </li>
     
     
@@ -1145,29 +1175,45 @@ git init  --bare 初始化一...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
+    
+        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
+    
+        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
-        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
-    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
+    
+        <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
+    
+        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
-        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+        <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
+    
+        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
+    
+        <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
+    
+        <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
     
@@ -1204,9 +1250,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
         <span class="sidebar-category-name" data-categories="ffmpeg"><span class="iconfont-archer">&#xe60a;</span>ffmpeg</span>
     
