@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="ddddfang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ddddfang">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="nothing to be told">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>makefile · ddddfang&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/img/target.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ddddfang&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">makefile</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">ddddfang's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            makefile
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.4k</span>阅读时长: <span class="post-count reading-time">14 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/01/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="1-gnu-make-in-detail-for-deginners"><a href="#1-gnu-make-in-detail-for-deginners" class="headerlink" title="1. gnu make in detail for deginners"></a>1. gnu make in detail for deginners</h3><p>&lt;以下为gnu make in detail for beginners的删减版,完整的在<a href="http://opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/" target="_blank" rel="noopener">这里</a>&gt;</p>
+<p>Have you ever peeked into the source code of any of the applications you run every day? Ever used make install to install some application? You will see make in most projects. It enables developers to easily compile large and complex programs with many components. It’s also used for writing maintenance scripts based on timestamps. This article shows you how to have fun with make.<br>Large projects can contain thousands of lines of code, distributed in multiple source files, written by many developers and arranged in several subdirectories. A project may contain several component divisions. These components may have complex inter-dependencies — for example, in order to compile component X, you have to first compile Y; in order to compile Y, you have to first compile Z; and so on. For a large project, when a few changes are made to the source, manually recompiling the entire project each time is tedious, error-prone and time-consuming.<br>Make is a solution to these problems. It can be used to specify dependencies between components, so that it will compile components in the order required to satisfy dependencies. An important feature is that when a project is recompiled after a few changes, it will recompile only the files which are changed, and any components that are dependent on it. This saves a lot of time. Make is, therefore, an essential tool for a large software project.<br>Each project needs a Makefile — a script that describes the project structure, namely, the source code files, the dependencies between them, compiler arguments, and how to produce the target output (normally, one or more executables). Whenever the make command is executed, the Makefile in the current working directory is interpreted, and the instructions executed to produce the target outputs. The Makefile contains a collection of rules, macros, variable assignments, etc. (‘Makefile’ or ‘makefile’ are both acceptable.)</p>
+<h4 id="1-1-Installing-GNU-Make"><a href="#1-1-Installing-GNU-Make" class="headerlink" title="1.1. Installing GNU Make"></a>1.1. Installing GNU Make</h4><p>Most distributions don’t ship make as part of the default installation. You have to install it, either using the package-management system, or by manually compiling from source. To compile and build from source, download the tarball, extract it, and go through the README file. (If you’re running Ubuntu, you can install make as well as some other common packages required for building from source, by running: <code>sudo apt-get install build-essential</code>.)</p>
+<h4 id="1-2-A-sample-project"><a href="#1-2-A-sample-project" class="headerlink" title="1.2. A sample project"></a>1.2. A sample project</h4><p>module.h:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void sample_func();</span><br></pre></td></tr></table></figure></p>
+<p>module.c:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;module.h&quot;</span><br><span class="line">void sample_func()</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>main.c:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;module.h&quot;</span><br><span class="line">void sample_func();</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    sample_func();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>The following are the manual steps to compile the project and produce the target binary:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slynux@freedom:~$ gcc -I . -c main.c   # Obtain main.o</span><br><span class="line">slynux@freedom:~$ gcc -I . -c module.c # Obtain module.o</span><br><span class="line">slynux@freedom:~$ gcc main.o module.o -o target_bin   # Obtain target binary</span><br></pre></td></tr></table></figure></p>
+<p>(-I is used to include the current directory (.) as a header file location.)</p>
+<h4 id="1-3-Writing-a-Makefile-from-scratch"><a href="#1-3-Writing-a-Makefile-from-scratch" class="headerlink" title="1.3. Writing a Makefile from scratch"></a>1.3. Writing a Makefile from scratch</h4><p>By convention, all variable names used in a Makefile are in upper-case. A common variable assignment in a Makefile is CC = gcc, which can then be used later on as ${CC} or $(CC). Makefiles use # as the comment-start marker, just like in shell scripts.<br>The general syntax of a Makefile rule is as follows:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">target: dependency1 dependency2 ...</span><br><span class="line">[TAB] action1</span><br><span class="line">[TAB] action2</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure></p>
+<p>a simple sample project:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">all: main.o module.o</span><br><span class="line">    gcc main.o module.o -o target_bin</span><br><span class="line">main.o: main.c module.h</span><br><span class="line">    gcc -I . -c main.c</span><br><span class="line">module.o: module.c module.h</span><br><span class="line">    gcc -I . -c module.c</span><br><span class="line">clean:</span><br><span class="line">    rm -rf *.o</span><br><span class="line">    rm target_bin</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>When we ran make without specifying a target on the command line, it defaulted to the first target in our Makefile</li>
+<li><p>There are different ways of assigning variables in a Makefile. They are (type of assignment, followed by the operator in parentheses):</p>
+<ul>
+<li><code>Simple assignment (:=)</code>  For example, when a CC := ${GCC} ${FLAGS} is first encountered, CC is set to gcc -W and wherever ${CC} occurs in actions, it is replaced with gcc -W.</li>
+<li><p><code>Recursive assignment (=)</code><br>Recursive assignment (the operator used is =) involves variables and values that are not evaluated immediately on encountering their definition, but are re-evaluated every time they are encountered in an action that is being executed. As an example, say we have:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GCC = gcc</span><br><span class="line">FLAGS = -W</span><br></pre></td></tr></table></figure>
+<p>  With the above lines, CC = ${GCC} {FLAGS} will be converted to gcc -W only when an action like ${CC} file.c is executed somewhere in the Makefile. With recursive assignation, if the GCC variable is changed later (for example, GCC = c++), then when it is next encountered in an action line that is being updated, it will be re-evaluated, and the new value will be used; ${CC} will now expand to c++ -W.<br>  We will also have an interesting and useful application further in the article, where this feature is used to deal with varying cases of filename extensions of image files.</p>
+</li>
+<li><code>Conditional assignment (?=)</code> Conditional assignment statements assign the given value to the variable only if the variable does not yet have a value.</li>
+<li><p><code>Appending (+=)</code>  The appending operation appends texts to an existing variable. For example:</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CC = gcc</span><br><span class="line">CC += -W</span><br></pre></td></tr></table></figure>
+<p>  CC now holds the value gcc -W. Though variable assignments can occur in any part of the Makefile, on a new line, most variable declarations are found at the beginning of the Makefile.</p>
+</li>
+</ul>
+</li>
+<li>Using patterns and special variables<br>The % character can be used for wildcard pattern-matching, to provide generic targets. For example:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%.o: %.c</span><br><span class="line">[TAB] actions</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>When % appears in the dependency list, it is replaced with the same string that was used to perform substitution in the target.<br>Inside actions, we can use special variables for matching filenames. Some of them are:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$@ (full target name of the current target)</span><br><span class="line">$? (returns the dependencies that are newer than the current target)</span><br><span class="line">$* (returns the text that corresponds to % in the target)</span><br><span class="line">$&lt; (name of the first dependency)</span><br><span class="line">$^ (name of all the dependencies with space as the delimiter)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Action modifiers<br>We can change the behaviour of the actions we use by prefixing certain action modifiers to the actions. Two important action modifiers are:</p>
+<ul>
+<li><code>- (minus)</code> — Prefixing this to any action causes any error that occurs while executing the action to be <strong>ignored</strong>. By default, execution of a Makefile stops when any command returns a non-zero (error) value. If an error occurs, a message is printed, with the status code of the command, and noting that the error has been ignored. Looking at the Makefile from our sample project: in the clean target, the rm target_bin command will produce an error if that file does not exist (this could happen if the project had never been compiled, or if make clean is run twice consecutively). To handle this, we can prefix the rm command with a minus, to ignore errors: -rm target_bin.</li>
+<li><code>@ (at)</code> suppresses the standard print-action-to-standard-output behaviour of make, for the action/command that is prefixed with @. For example, to echo a custom message to standard output, we want only the output of the echo command, and don’t want to print the echo command line itself. @echo Message will print “Message” without the echo command line being printed.</li>
+</ul>
+</li>
+<li><p>Use PHONY to avoid file-target name conflicts<br>Remember the all and clean special targets in our Makefile? What happens when the project directory has files with the names all or clean? The conflicts will cause errors. Use the .PHONY directive to specify which targets are not to be treated as files — for example: .PHONY: all clean.</p>
+</li>
+<li>Simulating make without actual execution<br>At times, maybe when developing the Makefile, we may want to trace the make execution (and view the logged messages) without actually running the actions, which is time consuming. Simply use make -n to do a “dry run”.</li>
+<li>Using the shell command output in a variable<br>Sometimes we need to use the output from one command/action in other places in the Makefile — for example, checking versions/locations of installed libraries, or other files required for compilation. We can obtain the shell output using the shell command. For example, to return a list of files in the current directory into a variable, we would run: LS_OUT = $(shell ls).</li>
+<li>Nested Makefiles<br>Nested Makefiles (which are Makefiles in one or more subdirectories that are also executed by running the make command in the parent directory) can be useful for building smaller projects as part of a larger project. To do this, we set up a target whose action changes directory to the subdirectory, and invokes make again:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subtargets:</span><br><span class="line">    cd subdirectory &amp;&amp; $(MAKE)</span><br></pre></td></tr></table></figure>
+<p>Instead of running the make command, we used $(MAKE), an environment variable, to provide flexibility to include arguments. For example, if you were doing a “dry run” invocation: if we used the make command directly for the subdirectory, the simulation option (-n) would not be passed, and the commands in the subdirectory’s Makefile would actually be executed. To enable use of the -n argument, use the $(MAKE) variable.<br>Now let’s improve our original Makefile using these advanced features:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">CC = gcc # Compiler to use</span><br><span class="line">OPTIONS = -O2 -g -Wall    # -g for debug, -O2 for optimise and -Wall additional messages</span><br><span class="line">INCLUDES = -I .         # Directory for header file</span><br><span class="line">OBJS = main.o module.o # List of objects to be build</span><br><span class="line"></span><br><span class="line">.PHONY: all clean # To declare all, clean are not files</span><br><span class="line"></span><br><span class="line">all: $&#123;OBJS&#125;</span><br><span class="line">    @echo &quot;Building..&quot; # To print &quot;Building..&quot; message</span><br><span class="line">    $&#123;CC&#125; $&#123;OPTIONS&#125; $&#123;INCLUDES&#125; $&#123;OBJS&#125; -o target_bin</span><br><span class="line"></span><br><span class="line">%.o: %.c  # % pattern wildcard matching</span><br><span class="line">    $&#123;CC&#125; $&#123;OPTIONS&#125; -c $*.c $&#123;INCLUDES&#125;</span><br><span class="line">list:</span><br><span class="line">    @echo $(shell ls) # To print output of command &apos;ls&apos;</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">    @echo &quot;Cleaning up..&quot;</span><br><span class="line">    -rm -rf *.o # - prefix for ignoring errors and continue execution</span><br><span class="line">    -rm target_bin</span><br></pre></td></tr></table></figure>
+<p>Run make on the modified Makefile and test it; also run make with the new list target. Observe the output.</p>
+<ul>
+<li>Make in non-compilation contexts</li>
+</ul>
+<p>I hope you’re now well informed about using make in a programming context. However, it’s also useful in non-programming contexts, due to the basic behaviour of checking the modification timestamps of target files and dependencies, and running the specified actions when required. For example, let’s write a Makefile that will manage an image store for us, doing thumbnailing when required. Our scenario is as follows:</p>
+<pre><code>We have a directory with two subdirectories, images and thumb.
+The images subdirectory contains many large image files; thumb contains thumbnails of the images, as .jpg files, 100x100px in image size.
+When a new image is added to the images directory, creation of its thumbnail in the thumb directory should be automated. If an image is modified, its thumbnail should be updated.
+The thumbnailing process should only be done for new or updated images, and not images that have up-to-date thumbnails.
+</code></pre><p>This problem can be solved easily by creating a Makefile in the top-level directory, as follows:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FILES = $(shell  find images -type f -iname &quot;*.jpg&quot; | sed &apos;s/images/thumb/g&apos;)</span><br><span class="line">CONVERT_CMD = convert -resize &quot;100x100&quot; $&lt; $@</span><br><span class="line">MSG = @echo &quot;\nUpdating thumbnail&quot; $@</span><br><span class="line"></span><br><span class="line">all: $&#123;FILES&#125;</span><br><span class="line">thumb/%.jpg: images/%.jpg</span><br><span class="line">    $(MSG)</span><br><span class="line">    $(CONVERT_CMD)</span><br><span class="line">thumb/%.JPG: images/%.JPG</span><br><span class="line">    $(MSG)</span><br><span class="line">    $(CONVERT_CMD)</span><br><span class="line">clean:</span><br><span class="line">    @echo Cleaning up files..</span><br><span class="line">    rm -rf thumb/*.jpg thumb/*.JPG</span><br></pre></td></tr></table></figure>
+<p>In the above Makefile, FILES = $(shell  find images -type f -iname “<em>.jpg” | sed ‘s/images/thumb/g’) is used to generate a list of dependency filenames. JPEG files could have the extension .jpg or .JPG (that is, differing in case). The -iname parameter to find (find images -type f -iname “</em>.jpg”) will do a case-insensitive search on the names of files, and will return files with both lower-case and upper-case extensions — for example, images/1.jpg, images/2.jpg, images/3.JPG and so on. The sed command replaces the text “images” with “thumb”, to get the dependency file path.<br>When make is invoked, the all target is executed first. Since FILES contains a list of thumbnail files for which to check the timestamp (or if they exist), make jumps down to the thumb/%.jpg wildcard target for each thumbnail image file name. (If the extension is upper-case, that is, thumb/3.JPG, then make will look for, and find, the second wildcard target, thumb/%.JPG.)<br>For each thumbnail file in the thumb directory, its dependency is the image file in the images directory. Hence, if any file (that’s expected to be) in the thumb directory does not exist, or its timestamp is older than the dependency file in the images directory, the action (calling $(CONVERT_CMD) to create a thumbnail) is run.<br>Using the features we described earlier, CONVERT_CMD is defined before targets are specified, but it uses recursive assignment. Hence, the input and target filenames passed to the convert command are substituted from the first dependency ($&lt;) and the target ($@) every time the action is invoked, and thus will work no matter from which action target (thumb/%.JPG or thumb/%.jpg) the action is invoked.<br>Naturally, the “Updating thumbnail” message is also defined using recursive assignment for the same reasons, ensuring that $(MSG) is re-evaluated every time the actions are executed, and thereby able to cope with variations in the case of the filename extension.</p>
+<p>slynux@freedom:~$ make<br>Updating thumbnail 1.jpg<br>convert -resize “100x100” images/1.jpg thumb/1.jpg<br>Updating thumbnail 4.jpg<br>convert -resize “100x100” images/4.jpg thumb/4.jpg</p>
+<p>If I edit 4.jpg in images and rerun make, since only 4.jpg‘s timestamp has changed, a thumbnail is generated for that image:</p>
+<p>slynux@freedom:~$ make<br>Updating thumbnail 4.jpg<br>convert -resize “100x100” images/4.jpg thumb/4.jpg</p>
+<p>Writing a script (shell script or Python, etc) to maintain image thumbnails by monitoring timestamps would have taken many lines of code. With make, we can do this in just 8 lines of Makefile. Isn’t make awesome?<br>That’s all about the basics of using the make utility. Happy hacking till we meet again!<br>This article was originally published in September 2010 issue of the print magazine.</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/01/28/makefile/">https://ddddfang.github.io/2019/01/28/makefile/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/01/28/makefile/">January 28th 2019, 6:50:37 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/01/28/makefile/">January 30th 2019, 1:57:19 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/01/29/makefile2/" title="makefile2">
+                    <div class="nextTitle">makefile2</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/01/28/perforce/" title="perforce">
+                    <div class="prevTitle">perforce</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:17621308623@163.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/ddddfang" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-gnu-make-in-detail-for-deginners"><span class="toc-number">1.</span> <span class="toc-text">1. gnu make in detail for deginners</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Installing-GNU-Make"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. Installing GNU Make</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-A-sample-project"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. A sample project</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Writing-a-Makefile-from-scratch"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. Writing a Makefile from scratch</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 18
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/29</span><a class="archive-post-title" href="/2019/01/29/makefile2/">makefile2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/perforce/">perforce</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/makefile/">makefile</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/static-dynamic-library/">static-dynamic-library</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/使用github/">使用github</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/vim/">vim</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/ubuntu-release/">ubuntu-release</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/xxd/">xxd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span><a class="archive-post-title" href="/2019/01/22/gdb/">gdb</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2019/01/11/git/">git</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2019/01/11/docker-basic/">docker-basic</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/ffmpeg学习资料/">ffmpeg学习资料</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/01/30/hello-world/">Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/hexo-blog/">hexo-blog</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
+    
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+    
+        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
+    
+        <span class="sidebar-category-name" data-categories="ffmpeg"><span class="iconfont-archer">&#xe60a;</span>ffmpeg</span>
+    
+        <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ddddfang"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
