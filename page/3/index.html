@@ -359,6 +359,44 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/23/sed/">
+            
+                <span>sed</span>
+        </a>
+        <div class="abstract-content">
+            1. sed替换的基本语法为:
+sed &#39;s/原字符串/替换字符串/&#39; 单引号里面,s表示替换,三根斜线中间是替换的样式,特殊字符需要使用反斜线”\”进行转义。
+
+2. 单引号” ‘ ’”是没有办法用反斜线”\”转义的,这时候只要把命令中的单引号改为双引号就行了,格式如下：
+sed &quot;s/原字符串包含&#39;/替换字符串包含&#39;/&quot; # 要处理的字符包含单引号
+
+3. 命令中的三根斜线分隔符可以换成别的符号,有时候替换目录字符串的时候有较多斜线，这个时候换成其它的分割符是较为方便,只需要紧跟s定义即可。
+sed &#39;s?原字符串?替换字符...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/23/shell/">
             
                 <span>shell</span>
@@ -1090,9 +1128,18 @@ ffmpeg notes
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1109,6 +1156,11 @@ ffmpeg notes
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/list/">list</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/rb-tree/">rb-tree</a>
         </li>
     
     
@@ -1267,15 +1319,13 @@ ffmpeg notes
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
-    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -1285,9 +1335,13 @@ ffmpeg notes
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+        <span class="sidebar-tag-name" data-tags="红黑树"><span class="iconfont-archer">&#xe606;</span>红黑树</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

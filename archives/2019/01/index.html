@@ -346,6 +346,48 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/rb-tree/">
+            
+                <span>rb-tree</span>
+        </a>
+        <div class="abstract-content">
+            1. 介绍Key-value 键值对貌似有用红黑书实现的（或者使用hash表实现，二者各有优劣）,关于红黑树的详细介绍可以参看 http://blog.csdn.net/v_JULY_v/article/details/6105630
+红黑树必须满足的规则：
+
+所有节点都有颜色，要么红色，要么黑色
+根节点是黑色，所有叶子节点也是黑色
+叶子节点中不包含数据
+非叶子节点都有2个子节点
+如果一个节点是红色，那么它的父节点和子节点都是黑色的（黑节点无此要求！）
+从任何一个节点开始，到其下叶子节点的路径中都包含相同数目的黑节点
+
+
+根据规则,可以知道:
+
+红黑树中最长的路径就是红黑交替的路径，最短...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="红黑树">红黑树</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/list/">
             
                 <span>list</span>
@@ -635,40 +677,6 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/29/makefile2/">
-            
-                <span>makefile2</span>
-        </a>
-        <div class="abstract-content">
-            DEMO 1configurate脚本，就是一段bash脚本
-123456789101112131415161718192021222324252627282930313233343536373839# linux系统除了提供位置参数还提供内置参数，内置参数如下：　# $0 ----脚本名称# $# ----传递给程序的总的参数数目 　# $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值。 　　# $* ----传递给程序的所有参数组成的字符串。（尽量使用$@并将其用双引号括起来） 　　# $@----以&quot;参数1&quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
     
 </div>
             
@@ -1081,9 +1089,18 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -1100,6 +1117,11 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/list/">list</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/rb-tree/">rb-tree</a>
         </li>
     
     
@@ -1258,15 +1280,13 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
-    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -1276,9 +1296,13 @@ docker之dockerfile实践v1先查看下本地的镜像，选一个作为base ima
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+        <span class="sidebar-tag-name" data-tags="红黑树"><span class="iconfont-archer">&#xe606;</span>红黑树</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

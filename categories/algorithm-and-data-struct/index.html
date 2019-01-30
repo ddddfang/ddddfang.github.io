@@ -346,6 +346,48 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/rb-tree/">
+            
+                <span>rb-tree</span>
+        </a>
+        <div class="abstract-content">
+            1. 介绍Key-value 键值对貌似有用红黑书实现的（或者使用hash表实现，二者各有优劣）,关于红黑树的详细介绍可以参看 http://blog.csdn.net/v_JULY_v/article/details/6105630
+红黑树必须满足的规则：
+
+所有节点都有颜色，要么红色，要么黑色
+根节点是黑色，所有叶子节点也是黑色
+叶子节点中不包含数据
+非叶子节点都有2个子节点
+如果一个节点是红色，那么它的父节点和子节点都是黑色的（黑节点无此要求！）
+从任何一个节点开始，到其下叶子节点的路径中都包含相同数目的黑节点
+
+
+根据规则,可以知道:
+
+红黑树中最长的路径就是红黑交替的路径，最短...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="红黑树">红黑树</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/list/">
             
                 <span>list</span>
@@ -803,9 +845,18 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 26
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -822,6 +873,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/list/">list</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/rb-tree/">rb-tree</a>
         </li>
     
     
@@ -980,15 +1036,13 @@
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
-    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -998,9 +1052,13 @@
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+        <span class="sidebar-tag-name" data-tags="红黑树"><span class="iconfont-archer">&#xe606;</span>红黑树</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
