@@ -359,6 +359,70 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/makefile/">
+            
+                <span>makefile</span>
+        </a>
+        <div class="abstract-content">
+            1. gnu make in detail for deginners&lt;以下为gnu make in detail for beginners的删减版,完整的在这里&gt;
+Have you ever peeked into the source code of any of the applications you run every day? Ever used make install to install some application? You will see make in most projects. It enables developers to easily...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/perforce/">
+            
+                <span>perforce</span>
+        </a>
+        <div class="abstract-content">
+            P4 使用1、如果需要修改某一个文件，可以先在 depot 页面 checkout（checkout 所做的工作就是 1、git reset 到 stash 这一级，并将workspace中对应文件变成可写  2、这样在右边 pending 页面中，diff against 就可以查看checkout的文件改动了）2、如果需要删除某一个文件，可以在depot 页面 mark for delete3、如果需要添加一个文件，在 workspace 页面 mark for add
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="p4">p4</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/28/static-dynamic-library/">
             
                 <span>static-dynamic-library</span>
@@ -635,97 +699,6 @@ sed &#39;s?原字符串?替换字符...
         <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/shell/">
-            
-                <span>shell</span>
-        </a>
-        <div class="abstract-content">
-            1.测试某个文件是否存在，类似的，-c是否是一个字符文件，-z该变量是否有值，-d是否是一个目录 -r是否可读123456tar_dir=`pwd`/123      #这其实就是一个字符串的连接，在shell里面将执行命令作为字符串返回，只要放在 `` 里if [ -f $tar_dir ];then    echo "tar exist"   else    mkdir -p $tar_dirfi
-2.遍历当前文件夹下所有文件12345678for file in `ls -l |awk '&#123;print $9&#125;'`   #这里其实file是新建的do    if ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
-            
-                <span>gdb</span>
-        </a>
-        <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
-
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
     
 </div>
             
@@ -1192,9 +1165,41 @@ delet...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 24
+        Total : 26
         </div>
         <!-- search  -->
         
@@ -1207,6 +1212,11 @@ delet...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/list/">list</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1226,6 +1236,11 @@ delet...
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/printf-可变参数/">printf-可变参数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/sort-related/">sort-related</a>
         </li>
     
     
@@ -1290,12 +1305,12 @@ delet...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
         </li>
     
     
@@ -1359,6 +1374,10 @@ delet...
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
+    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
@@ -1372,6 +1391,8 @@ delet...
         <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
+    
+        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
     
@@ -1415,6 +1436,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
         <span class="sidebar-category-name" data-categories="ffmpeg"><span class="iconfont-archer">&#xe60a;</span>ffmpeg</span>
+    
+        <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

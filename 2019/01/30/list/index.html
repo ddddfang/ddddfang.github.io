@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="ddddfang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ddddfang">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="nothing to be told">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>list · ddddfang&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/img/target.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ddddfang&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">list</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">ddddfang's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            list
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="链表">链表</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.9k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/01/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="list-h"><a href="#list-h" class="headerlink" title="list.h"></a>list.h</h2><p>这个list.h其实是linux内核中链表实现的精简版(只需要一个头文件)，linux提供的这套接口更像是构造list的零部件。用户可以选择直接用它定制化自己的 list型数据结构，甚至可以实现一个更为 高层次的、通用的 list接口（如下面的clist）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _LIST_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _LIST_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">list_node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">next</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">prev</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListNodeToItem - get the struct for this entry</span></span><br><span class="line"><span class="comment">* @node:    the &amp;struct list_node pointer.</span></span><br><span class="line"><span class="comment">* @container:    the type of the struct this is embedded in.</span></span><br><span class="line"><span class="comment">* @member:    the name of the list_struct within the struct.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ListNodeToItem(node, container, member) \</span></span><br><span class="line">    (container *) (((<span class="keyword">char</span>*) (node)) - ((<span class="keyword">unsigned</span> <span class="keyword">long</span>) &amp;((container *)<span class="number">0</span>)-&gt;member))</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ListDeclare(name) \</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> <span class="title">name</span> = &#123;</span> \</span><br><span class="line">        .next = &amp;name, \</span><br><span class="line">        .prev = &amp;name, \</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListForEach    -    iterate over a list</span></span><br><span class="line"><span class="comment">* @node:    the &amp;struct list_node to use as a loop cursor.</span></span><br><span class="line"><span class="comment">* @list:    the head for your list.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">#define ListForEach(node, <span class="built_in">list</span>) \</span><br><span class="line">    <span class="keyword">for</span> (node = (<span class="built_in">list</span>)-&gt;next; node != (<span class="built_in">list</span>); node = node-&gt;next)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListForEachReverse    -    iterate over a list backwards</span></span><br><span class="line"><span class="comment">* @node:    the &amp;struct list_node to use as a loop cursor.</span></span><br><span class="line"><span class="comment">* @list:    the head for your list.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">#define ListForEachReverse(node, <span class="built_in">list</span>) \</span><br><span class="line">    <span class="keyword">for</span> (node = (<span class="built_in">list</span>)-&gt;prev; node != (<span class="built_in">list</span>); node = node-&gt;prev)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListForEachSafe - iterate over a list safe against removal of list entry</span></span><br><span class="line"><span class="comment">* @node:    the &amp;struct list_node to use as a loop cursor.</span></span><br><span class="line"><span class="comment">* @n:        another &amp;struct list_node to use as temporary storage</span></span><br><span class="line"><span class="comment">* @list:    the head for your list.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">#define ListForEachSafe(node, n, <span class="built_in">list</span>) \</span><br><span class="line">    <span class="keyword">for</span> (node = (<span class="built_in">list</span>)-&gt;next, n = node-&gt;next; \</span><br><span class="line">         node != (<span class="built_in">list</span>); \</span><br><span class="line">         node = n, n = node-&gt;next)</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> ListInit(struct list_node *node)</span><br><span class="line">&#123;</span><br><span class="line">    node-&gt;next = node;</span><br><span class="line">    node-&gt;prev = node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListAddTail - add a new entry</span></span><br><span class="line"><span class="comment">* @head: list head to add it before</span></span><br><span class="line"><span class="comment">* @item: new entry to be added</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* Insert a new entry before the specified head.</span></span><br><span class="line"><span class="comment">* This is useful for implementing queues.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ListAddTail</span><span class="params">(struct list_node *head, struct list_node *item)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    item-&gt;next = head;</span><br><span class="line">    item-&gt;prev = head-&gt;prev;</span><br><span class="line">    head-&gt;prev-&gt;next = item;</span><br><span class="line">    head-&gt;prev = item;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListAddHead - add a new entry</span></span><br><span class="line"><span class="comment">* @head: list head to add it after</span></span><br><span class="line"><span class="comment">* @item: new entry to be added</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* Insert a new entry after the specified head.</span></span><br><span class="line"><span class="comment">* This is good for implementing stacks.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ListAddHead</span><span class="params">(struct list_node *head, struct list_node *item)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    item-&gt;next = head-&gt;next;</span><br><span class="line">    item-&gt;prev = head;</span><br><span class="line">    head-&gt;next-&gt;prev = item;</span><br><span class="line">    head-&gt;next = item;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* ListAppend - let list2(head2) append to the tail of list1(head1)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ListAppend</span><span class="params">(struct list_node *head1, struct list_node *head2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head2-&gt;prev-&gt;next = head1;</span><br><span class="line">    head2-&gt;next-&gt;prev = head1-&gt;prev;</span><br><span class="line">    head1-&gt;prev-&gt;next = head2-&gt;next;</span><br><span class="line">    head1-&gt;prev = head2-&gt;prev;</span><br><span class="line"></span><br><span class="line">    head2-&gt;prev = head2;</span><br><span class="line">    head2-&gt;next = head2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ListReverse</span><span class="params">(struct list_node *head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">pNode</span> = <span class="title">head</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">pTmp</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(pNode-&gt;next != head)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//store the next node</span></span><br><span class="line">        pTmp = pNode-&gt;next;</span><br><span class="line">        <span class="comment">//swap</span></span><br><span class="line">        <span class="comment">//pTmp = pNode-&gt;next;</span></span><br><span class="line">        pNode-&gt;next = pNode-&gt;prev;</span><br><span class="line">        pNode-&gt;prev = pTmp;</span><br><span class="line"></span><br><span class="line">        pNode = pTmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//last swap</span></span><br><span class="line">    pTmp = pNode-&gt;next;</span><br><span class="line">    pNode-&gt;next = pNode-&gt;prev;</span><br><span class="line">    pNode-&gt;prev = pTmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* ZX_ListRemove - delete a list entry</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* This is only for internal list manipulation where we know</span></span><br><span class="line"><span class="comment">* the prev/next entries already!</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ListRemove</span><span class="params">(struct list_node *item)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    item-&gt;next-&gt;prev = item-&gt;prev;</span><br><span class="line">    item-&gt;prev-&gt;next = item-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ListIsEmpty(list) ((list) == (list)-&gt;next)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ListHead(list) ((list)-&gt;next)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ListTail(list) ((list)-&gt;prev)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//LIST_H_</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="直接使用-list-h"><a href="#直接使用-list-h" class="headerlink" title="直接使用 list.h"></a>直接使用 list.h</h5><p>在头文件中,定义一个node,一个manager</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自己实现的一个stack(queue也是可以实现的)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">pthread_mutex_t</span> lock;           <span class="comment">//这里应该有一个mutex lock的,但是写的时候忘记加了</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> u32StackSize;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">zxlist_node</span> <span class="title">listNode</span>;</span></span><br><span class="line">&#125;FRAME_UI_STACK_MGR;                 <span class="comment">//stack manager结构体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    UI_FRAME_S *pUIFrame;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">zxlist_node</span> <span class="title">listNode</span>;</span></span><br><span class="line">&#125;FRAME_UI_STACK_NODE;</span><br></pre></td></tr></table></figure>
+<p>在.c文件中,</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> FRAME_UI_STACK_MGR gstFrameUIStack = &#123;</span><br><span class="line">    .lock = PTHREAD_MUTEX_INITIALIZER,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">frameUIStackInit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gstFrameUIStack.u32StackSize = <span class="number">0</span>;</span><br><span class="line">    ZX_ListInit(&amp;gstFrameUIStack.listNode);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">frameUIStackDeinit</span><span class="params">()</span> </span>&#123;<span class="comment">//descroy the stack</span></span><br><span class="line">    zxlist_node *pListNode = <span class="literal">NULL</span>;</span><br><span class="line">    FRAME_UI_STACK_NODE *pStackNode = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span>(!ZX_ListEmpty(&amp;gstFrameUIStack.listNode)) &#123;</span><br><span class="line">        pListNode = ZX_ListTail(&amp;gstFrameUIStack.listNode);</span><br><span class="line">        pStackNode = ZX_ListNodeToItem(pListNode, FRAME_UI_STACK_NODE, listNode);</span><br><span class="line">        ZX_ListRemove(pListNode);</span><br><span class="line">        <span class="built_in">free</span>(pStackNode);</span><br><span class="line">    &#125;</span><br><span class="line">    gstFrameUIStack.u32StackSize = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">frameUIStackPush</span><span class="params">(UI_FRAME_S *pUIFrame)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pUIFrame == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"frameUIStackPush error: invalid param\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    FRAME_UI_STACK_NODE *pUINode = (FRAME_UI_STACK_NODE *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(FRAME_UI_STACK_NODE));</span><br><span class="line">    <span class="keyword">if</span>(pUINode == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"frameUIStackPush add node error: no more availiable mem\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pUINode-&gt;pUIFrame = pUIFrame;</span><br><span class="line">    ZX_ListAddTail(&amp;gstFrameUIStack.listNode,&amp;(pUINode-&gt;listNode));    <span class="comment">//add to tail</span></span><br><span class="line">    gstFrameUIStack.u32StackSize++;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">frameUIStackTop</span><span class="params">(UI_FRAME_S **ppUIFrame)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(ppUIFrame == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"frameUIStackTop error: invalid param\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(gstFrameUIStack.u32StackSize == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(ZX_ListEmpty(&amp;gstFrameUIStack.listNode)) &#123;<span class="comment">//confirm</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"frameUIStackTop stack is empty!\n"</span>);</span><br><span class="line">            *ppUIFrame = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"frameUIStackTop error!\n"</span>);</span><br><span class="line">            *ppUIFrame = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    zxlist_node *pListNode = ZX_ListTail(&amp;gstFrameUIStack.listNode);        <span class="comment">//just get the tail</span></span><br><span class="line">    FRAME_UI_STACK_NODE *pStackNode = ZX_ListNodeToItem(pListNode, FRAME_UI_STACK_NODE, listNode);</span><br><span class="line">    *ppUIFrame = pStackNode-&gt;pUIFrame;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">frameUIStackPop</span><span class="params">(UI_FRAME_S **ppUIFrame)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(gstFrameUIStack.u32StackSize == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(ZX_ListEmpty(&amp;gstFrameUIStack.listNode))&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"frameUIStackPop stack is empty!\n"</span>);</span><br><span class="line">            *ppUIFrame = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"frameUIStackPop error!\n"</span>);</span><br><span class="line">            *ppUIFrame = <span class="literal">NULL</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    zxlist_node *pListNode = ZX_ListTail(&amp;gstFrameUIStack.listNode);    <span class="comment">//get the tail</span></span><br><span class="line">    FRAME_UI_STACK_NODE *pStackNode = ZX_ListNodeToItem(pListNode, FRAME_UI_STACK_NODE, listNode);</span><br><span class="line">    <span class="keyword">if</span>(ppUIFrame != <span class="literal">NULL</span>) &#123;<span class="comment">//if param is null, just discard top element</span></span><br><span class="line">        *ppUIFrame = pStackNode-&gt;pUIFrame;</span><br><span class="line">    &#125;</span><br><span class="line">    ZX_ListRemove(pListNode);                                                                       <span class="comment">//remove the tail</span></span><br><span class="line">    <span class="built_in">free</span>(pStackNode);</span><br><span class="line">    gstFrameUIStack.u32StackSize--;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组实现的stack和queue比链表效率更高一点</p>
+<ul>
+<li>数组实现的stack应该很简单</li>
+<li>数组实现的queue分为两种：<ul>
+<li>使用环形队列，效率高，但需要考虑wrap的情况  (RingBuf)</li>
+<li>不用环形队列，使用memmove，效率有折损但简单（bufQueue）<br>list、stack、fifo(即queue)都属于线性结构，stack和fifo可以看作阉割版的list</li>
+</ul>
+</li>
+</ul>
+<h5 id="cList-c，这是在学习了《c-接口与实现》第7章-后弄的一个类-lisp-链表-的实现"><a href="#cList-c，这是在学习了《c-接口与实现》第7章-后弄的一个类-lisp-链表-的实现" class="headerlink" title="cList.c，这是在学习了《c 接口与实现》第7章 后弄的一个类 lisp 链表 的实现"></a>cList.c，这是在学习了《c 接口与实现》第7章 后弄的一个类 lisp 链表 的实现</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdarg.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stddef.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cList.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将一个数据push到list的head</span></span><br><span class="line"><span class="function">clist <span class="title">List_push</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> *x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">    clist listTmp = <span class="literal">NULL</span>;</span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">list</span>)</span><br><span class="line">    &#123;    <span class="comment">//new malloc a list manager node and init</span></span><br><span class="line">        listTmp = (clist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct clistManager));</span><br><span class="line">        <span class="keyword">if</span>(!listTmp)</span><br><span class="line">            <span class="keyword">goto</span> FAIL_1;</span><br><span class="line">        ListInit(&amp;listTmp-&gt;listNode);</span><br><span class="line">        listTmp-&gt;u32ListSize = <span class="number">0</span>;</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        listTmp = <span class="built_in">list</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//new list node and init</span></span><br><span class="line">    pNodeTmp = (clistNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(clistNode));</span><br><span class="line">    <span class="keyword">if</span>(!pNodeTmp)</span><br><span class="line">        <span class="keyword">goto</span> FAIL_2;</span><br><span class="line">    ListInit(&amp;pNodeTmp-&gt;listNode);</span><br><span class="line">    pNodeTmp-&gt;data = x;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//add list node to clist manager(header)</span></span><br><span class="line">    ListAddHead(&amp;listTmp-&gt;listNode, &amp;pNodeTmp-&gt;listNode);</span><br><span class="line">    listTmp-&gt;u32ListSize++;</span><br><span class="line">    <span class="keyword">return</span> listTmp;</span><br><span class="line"></span><br><span class="line">FAIL_2:</span><br><span class="line">    <span class="keyword">if</span>(flag)</span><br><span class="line">        <span class="built_in">free</span>(listTmp);</span><br><span class="line">FAIL_1:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造一个list,应该以NULL或者其他为false的值结尾</span></span><br><span class="line"><span class="function">clist <span class="title">List_list</span><span class="params">(<span class="keyword">void</span> *x, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    va_list ap;</span><br><span class="line">    va_start(ap, x);</span><br><span class="line"></span><br><span class="line">    clist listTmp = <span class="literal">NULL</span>;</span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//new malloc a list manager node and init</span></span><br><span class="line">    listTmp = (clist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct clistManager));</span><br><span class="line">    <span class="keyword">if</span>(!listTmp)</span><br><span class="line">        <span class="keyword">goto</span> FAIL_1;</span><br><span class="line">    ListInit(&amp;listTmp-&gt;listNode);</span><br><span class="line">    listTmp-&gt;u32ListSize = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> ( ; x; x = va_arg(ap, <span class="keyword">void</span> *))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//new list node and init</span></span><br><span class="line">        pNodeTmp = (clistNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(clistNode));</span><br><span class="line">        <span class="keyword">if</span>(!pNodeTmp)    <span class="comment">// <span class="doctag">TODO:</span> this may cause memleak</span></span><br><span class="line">            <span class="keyword">goto</span> FAIL_2;</span><br><span class="line">        ListInit(&amp;pNodeTmp-&gt;listNode);</span><br><span class="line">        pNodeTmp-&gt;data = x;</span><br><span class="line"></span><br><span class="line">        ListAddTail(&amp;listTmp-&gt;listNode, &amp;pNodeTmp-&gt;listNode);</span><br><span class="line">        listTmp-&gt;u32ListSize++;</span><br><span class="line">    &#125;</span><br><span class="line">    va_end(ap);</span><br><span class="line">    <span class="keyword">return</span> listTmp;</span><br><span class="line"></span><br><span class="line">FAIL_2:</span><br><span class="line">    List_free(&amp;listTmp);</span><br><span class="line">FAIL_1:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">clist <span class="title">List_append</span><span class="params">(clist <span class="built_in">list</span>, clist tail)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">list</span>)</span><br><span class="line">        <span class="keyword">return</span> tail;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(tail)</span><br><span class="line">    &#123;</span><br><span class="line">        ListAppend(&amp;<span class="built_in">list</span>-&gt;listNode, &amp;tail-&gt;listNode);</span><br><span class="line">        <span class="built_in">list</span>-&gt;u32ListSize += tail-&gt;u32ListSize;</span><br><span class="line">        tail-&gt;u32ListSize = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">clist <span class="title">List_copy</span><span class="params">(clist <span class="built_in">list</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    clist listTmp = <span class="literal">NULL</span>;</span><br><span class="line">    clistNode *pNodeTmpSrc = <span class="literal">NULL</span>;</span><br><span class="line">    clistNode *pNodeTmpDst = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">list</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//new malloc a list manager node and init</span></span><br><span class="line">        listTmp = (clist)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct clistManager));</span><br><span class="line">        <span class="keyword">if</span>(!listTmp)</span><br><span class="line">            <span class="keyword">goto</span> FAIL_1;</span><br><span class="line">        ListInit(&amp;listTmp-&gt;listNode);</span><br><span class="line">        listTmp-&gt;u32ListSize = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line">        ListForEach(plistNode,&amp;<span class="built_in">list</span>-&gt;listNode)</span><br><span class="line">        &#123;</span><br><span class="line">            pNodeTmpSrc = ListNodeToItem(plistNode, clistNode, listNode);</span><br><span class="line">            <span class="comment">//new list node and init</span></span><br><span class="line">            pNodeTmpDst = (clistNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(clistNode));</span><br><span class="line">            <span class="keyword">if</span>(!pNodeTmpDst)</span><br><span class="line">                <span class="keyword">goto</span> FAIL_2;</span><br><span class="line">            ListInit(&amp;pNodeTmpDst-&gt;listNode);</span><br><span class="line">            pNodeTmpDst-&gt;data = pNodeTmpSrc-&gt;data;</span><br><span class="line">            <span class="comment">//insert</span></span><br><span class="line">            ListAddTail(&amp;listTmp-&gt;listNode, &amp;pNodeTmpDst-&gt;listNode);</span><br><span class="line">            listTmp-&gt;u32ListSize++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> listTmp;</span><br><span class="line"></span><br><span class="line">FAIL_2:</span><br><span class="line">    List_free(&amp;listTmp);</span><br><span class="line">FAIL_1:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">clist <span class="title">List_pop</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> **x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">list</span> &amp;&amp; !ListIsEmpty(&amp;<span class="built_in">list</span>-&gt;listNode))</span><br><span class="line">    &#123;</span><br><span class="line">        plistNode = ListHead(&amp;<span class="built_in">list</span>-&gt;listNode);</span><br><span class="line">        pNodeTmp = ListNodeToItem(plistNode, clistNode, listNode);</span><br><span class="line">        <span class="keyword">if</span> (x)</span><br><span class="line">            *x = pNodeTmp-&gt;data;</span><br><span class="line">        ListRemove(plistNode);</span><br><span class="line">        <span class="built_in">free</span>(pNodeTmp);</span><br><span class="line">        <span class="built_in">list</span>-&gt;u32ListSize--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//NOTE :param list and returned list both reversed!</span></span><br><span class="line"><span class="function">clist <span class="title">List_reverse</span><span class="params">(clist <span class="built_in">list</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">list</span>)</span><br><span class="line">        ListReverse(&amp;<span class="built_in">list</span>-&gt;listNode);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">List_length</span><span class="params">(clist <span class="built_in">list</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">list</span>)</span><br><span class="line">        n = <span class="built_in">list</span>-&gt;u32ListSize;</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List_free</span><span class="params">(clist *plist)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    clist <span class="built_in">list</span> = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> (plist)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">list</span> = *plist;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">list</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(!ListIsEmpty(&amp;<span class="built_in">list</span>-&gt;listNode))</span><br><span class="line">            &#123;</span><br><span class="line">                plistNode = ListHead(&amp;<span class="built_in">list</span>-&gt;listNode);</span><br><span class="line">                pNodeTmp = ListNodeToItem(plistNode, clistNode, listNode);</span><br><span class="line">                ListRemove(plistNode);</span><br><span class="line">                <span class="built_in">free</span>(pNodeTmp);</span><br><span class="line">                <span class="built_in">list</span>-&gt;u32ListSize--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">free</span>(<span class="built_in">list</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        *plist = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List_map</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> apply(<span class="keyword">void</span> **x,<span class="keyword">int</span> index, <span class="keyword">void</span> *cl), <span class="keyword">void</span> *cl)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(apply &amp;&amp; <span class="built_in">list</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ListForEach(plistNode,&amp;<span class="built_in">list</span>-&gt;listNode)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//apply 使用的是指向 first 的指针,因此可能改变 first 指针的指向</span></span><br><span class="line">            pNodeTmp = ListNodeToItem(plistNode, clistNode, listNode);</span><br><span class="line">            apply(&amp;pNodeTmp-&gt;data,i++,cl);    <span class="comment">//</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> **<span class="title">List_toArray</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> *end)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>, n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> *<span class="title">plistNode</span> = <span class="title">NULL</span>;</span></span><br><span class="line">    clistNode *pNodeTmp = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">void</span> **<span class="built_in">array</span> = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">list</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        n = <span class="built_in">list</span>-&gt;u32ListSize;</span><br><span class="line">        <span class="built_in">array</span> = (<span class="keyword">void</span> **)<span class="built_in">malloc</span>((n + <span class="number">1</span>)*<span class="keyword">sizeof</span> (<span class="keyword">void</span> *));</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">array</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        ListForEach(plistNode,&amp;<span class="built_in">list</span>-&gt;listNode)</span><br><span class="line">        &#123;</span><br><span class="line">            pNodeTmp = ListNodeToItem(plistNode, clistNode, listNode);</span><br><span class="line">            <span class="built_in">array</span>[i++] = pNodeTmp-&gt;data;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">array</span>[i] = end;    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">array</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="cList-h"><a href="#cList-h" class="headerlink" title="cList.h"></a>cList.h</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cList.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _COMMON_LIST_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _COMMON_LIST_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"list.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">clistManager</span>&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> <span class="title">listNode</span>;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> u32ListSize;</span><br><span class="line">&#125; *clist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">list_node</span> <span class="title">listNode</span>;</span></span><br><span class="line">    <span class="keyword">void</span> *data;</span><br><span class="line">&#125; clistNode;</span><br><span class="line"></span><br><span class="line"><span class="function">clist <span class="title">List_push</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> *x)</span></span>;</span><br><span class="line"><span class="function">clist <span class="title">List_list</span><span class="params">(<span class="keyword">void</span> *x, ...)</span></span>;</span><br><span class="line"><span class="function">clist <span class="title">List_append</span><span class="params">(clist <span class="built_in">list</span>, clist tail)</span></span>;</span><br><span class="line"><span class="function">clist <span class="title">List_copy</span><span class="params">(clist <span class="built_in">list</span>)</span></span>;</span><br><span class="line"><span class="function">clist <span class="title">List_pop</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> **x)</span></span>;</span><br><span class="line"><span class="function">clist <span class="title">List_reverse</span><span class="params">(clist <span class="built_in">list</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">List_length</span><span class="params">(clist <span class="built_in">list</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List_free</span><span class="params">(clist *plist)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List_map</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> apply(<span class="keyword">void</span> **x,<span class="keyword">int</span> index, <span class="keyword">void</span> *cl), <span class="keyword">void</span> *cl)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> **<span class="title">List_toArray</span><span class="params">(clist <span class="built_in">list</span>, <span class="keyword">void</span> *end)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/01/30/list/">https://ddddfang.github.io/2019/01/30/list/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/01/30/list/">January 30th 2019, 4:21:13 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/01/30/list/">January 30th 2019, 4:44:35 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/01/30/sort-related/" title="sort-related">
+                    <div class="prevTitle">sort-related</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:17621308623@163.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/ddddfang" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#list-h"><span class="toc-number">1.</span> <span class="toc-text">list.h</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#直接使用-list-h"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">直接使用 list.h</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cList-c，这是在学习了《c-接口与实现》第7章-后弄的一个类-lisp-链表-的实现"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">cList.c，这是在学习了《c 接口与实现》第7章 后弄的一个类 lisp 链表 的实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cList-h"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">cList.h</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 26
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/list/">list</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-apps/">docker-apps</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/printf-可变参数/">printf-可变参数</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/sort-related/">sort-related</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-hub/">docker-hub</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/杂谈/">杂谈</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-file/">docker-file</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/29</span><a class="archive-post-title" href="/2019/01/29/makefile2/">makefile2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/perforce/">perforce</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/makefile/">makefile</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/static-dynamic-library/">static-dynamic-library</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/使用github/">使用github</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span><a class="archive-post-title" href="/2019/01/28/vim/">vim</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/ubuntu-release/">ubuntu-release</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/xxd/">xxd</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span><a class="archive-post-title" href="/2019/01/22/gdb/">gdb</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2019/01/11/git/">git</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href="/2019/01/11/docker-basic/">docker-basic</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/ffmpeg学习资料/">ffmpeg学习资料</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span><a class="archive-post-title" href="/2019/01/03/hexo-blog/">hexo-blog</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
+    
+        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
+    
+        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
+    
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
+    
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
+    
+        <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
+    
+        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+    
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
+    
+        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
+    
+        <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
+    
+        <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
+    
+        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
+    
+        <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
+    
+        <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
+    
+        <span class="sidebar-category-name" data-categories="ffmpeg"><span class="iconfont-archer">&#xe60a;</span>ffmpeg</span>
+    
+        <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ddddfang"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
