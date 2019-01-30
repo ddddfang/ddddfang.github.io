@@ -346,47 +346,57 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
+        <a class="abstract-title" href="/2019/01/11/docker-basic/">
             
-                <span>gdb</span>
+                <span>docker-basic</span>
         </a>
         <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
+            docker基础
+docekr 相当于超轻量级虚拟机,大部分代码应该属于隔离而非通信(因为docker最终都是调用的真是机器*nix)
+ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os的实现,而是docker的沙箱/壳实现
+在沙箱中apt-get install 会体现到沙箱提供的文件系统(隔离code)等,所以主机看不到沙箱里面,沙箱也看不到外面
+其他 image 应该是沙箱+应用的集合,从虚拟机观点看,每个应用都附着在其os沙箱上,多个应用合作必然会启动多个os, 但这个os反映到真实机器上就是我们的宿主机一个而已
 
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
+1.ubunt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/03/hexo-blog/">
+            
+                <span>hexo-blog</span>
+        </a>
+        <div class="abstract-content">
+            github 结合 hexo 可以搭建自己的博客,具体步骤如下.
+1. 安装依赖安装node.js12curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash   //https://github.com/creationix/nvmwget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh
+(重启terminal)12nvm install stablenode -v
+安装node插件(he...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
             </div>
             <!-- tags  -->
             
@@ -394,7 +404,7 @@ delet...
     
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
 </div>
             
@@ -402,6 +412,10 @@ delet...
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/categories/common-misc/">&#60; PREV</a><a class="page-number" href="/categories/common-misc/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->

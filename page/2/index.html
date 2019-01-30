@@ -359,6 +359,74 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/23/dd/">
+            
+                <span>dd</span>
+        </a>
+        <div class="abstract-content">
+            1. 搞openwrt用到puppy linux时，直接将系统镜像写入到硬盘（重新启动从硬盘加载就变成 openwrt 对应的操作系统了）1dd if=openwrt-x86-generic-combined-ext2.img of=/dev/sda
+2.将bin文件作为镜像写入软盘 (于渊：所谓镜像，可理解为原始设备的逐字节复制。如软盘的第m个字节对应文件的第m个字节)12nasm boot.asm -o boot.bindd if=boot.bin of=/dev/fd0 bs=512 count=1 conv=notrunc
+3.小测试12345dd if=/dev/zero of...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/23/xxd/">
+            
+                <span>xxd</span>
+        </a>
+        <div class="abstract-content">
+            xxd: 二进制显示和处理文件工具,cat: 以文本方式ASCII显示文件
+xxd -s 0x30 file skip file 的前 0x30 bytes后显示file
+xxd -s -0x30 file skip file 的 (size-0x30) bytes后显示file（其实就是显示file的最后 0x30 bytes）
+xxd -s 0x28 -l 120 -c 12 file skip file的0x28bytes后，显示 len=120 bytes的内容，每行显示12 bytes(column=12)
+xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/23/sed/">
             
                 <span>sed</span>
@@ -473,9 +541,9 @@ delet...
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
     
 </div>
             
@@ -545,9 +613,9 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
 </div>
             
@@ -1003,9 +1071,45 @@ ffmpeg notes
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -1018,6 +1122,16 @@ ffmpeg notes
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-hub/">docker-hub</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/docker-file/">docker-file</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1056,22 +1170,22 @@ ffmpeg notes
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/sed/">sed</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
         </li>
     
     
@@ -1113,23 +1227,23 @@ ffmpeg notes
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
-        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
-        <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
-    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+    
+        <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
-        <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     

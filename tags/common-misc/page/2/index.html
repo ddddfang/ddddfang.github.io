@@ -346,47 +346,20 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
+        <a class="abstract-title" href="/2019/01/03/hexo-blog/">
             
-                <span>gdb</span>
+                <span>hexo-blog</span>
         </a>
         <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
-
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
+            github 结合 hexo 可以搭建自己的博客,具体步骤如下.
+1. 安装依赖安装node.js12curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash   //https://github.com/creationix/nvmwget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh
+(重启terminal)12nvm install stablenode -v
+安装node插件(he...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
             </div>
             <!-- tags  -->
             
@@ -394,7 +367,7 @@ delet...
     
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
     
 </div>
             
@@ -402,6 +375,10 @@ delet...
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/tags/common-misc/">&#60; PREV</a><a class="page-number" href="/tags/common-misc/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->

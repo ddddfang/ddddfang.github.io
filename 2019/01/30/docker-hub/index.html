@@ -22,7 +22,7 @@
     <meta name="description" content="nothing to be told">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>vim · ddddfang&#39;s Blog</title>
+    <title>docker-hub · ddddfang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">ddddfang&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">vim</a>
+                <a href="#" class="post-name">docker-hub</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            vim
+            docker-hub
             <!-- 404 -->
             
         </h1>
@@ -266,20 +266,20 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">498</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/28</span>
+                    <span class="post-intro-time">2019/01/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,54 +403,46 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;  向左缩进</span><br><span class="line">&gt;&gt;  向左缩进</span><br></pre></td></tr></table></figure>
-<h3 id="1、vim命令mode下快捷命令"><a href="#1、vim命令mode下快捷命令" class="headerlink" title="1、vim命令mode下快捷命令"></a>1、vim命令mode下快捷命令</h3><p>（插入mode——ESC—–&gt;命令mode）：<br>（命令mode——   i  —–&gt;插入mode）：</p>
+        <h2 id="docker-hub"><a href="#docker-hub" class="headerlink" title="docker hub"></a>docker hub</h2><h3 id="1-使用-docker-hub-服务器"><a href="#1-使用-docker-hub-服务器" class="headerlink" title="1. 使用 docker hub 服务器"></a>1. 使用 docker hub 服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注册dockerhub帐号</span><br><span class="line">sudo docker login  填写用户名和密码</span><br><span class="line">sudo docker tag &lt;imageID&gt; ddddfang/ubuntu:tag   ddddfang是账户的名字,所以在push之前需要将image名字改成&lt;账户名/xxx:tag&gt;这种形式</span><br><span class="line">(sudo docker rmi -f imagename:tag    删除某个tag,此时不可以使用imagesid,因为多个tag对应的imagesid是相同的)</span><br><span class="line">sudo docker push</span><br></pre></td></tr></table></figure>
+<h3 id="2-使用私有hub"><a href="#2-使用私有hub" class="headerlink" title="2. 使用私有hub"></a>2. 使用私有hub</h3><p> <a href="https://blog.csdn.net/boling_cavalry/article/details/78818462" target="_blank" rel="noopener">参考这里</a> 还有 <a href="https://www.cnblogs.com/Tempted/p/7768694.html" target="_blank" rel="noopener">这里</a></p>
 <ul>
-<li><code>/name</code> 从光标开始处向文件尾搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）</li>
-<li><code>?name</code> 从光标开始处向文件头搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）（这个不常用）</li>
-<li><code>u</code> 取消前一个操作（相当于撤销）</li>
-<li><code>[n]yy</code> 拷贝当前开始的n行（省略n则只拷贝当前行）</li>
-<li><code>[n]dd</code> 删除当前开始的n行（省略n则只删除当前行）</li>
-<li><code>p</code> 粘帖</li>
-<li><code>:xx</code>  执行vim命令，xx可以是:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wq（保存退出）wq!（强制保存并退出）q（退出不保存）q!（强制退出不保存）</span><br><span class="line">w（只是写入，即保存）,w [filename] （另存为）</span><br><span class="line">nohl（清除高亮）      set nu（显示行号）         set nonu（不显示行号）</span><br><span class="line">g/p1/s//p2/g         （将文件中的所有p1用p2替换。等效于   %s/p1/p2/g  ）</span><br><span class="line">[n1,n2]s/p1/p2/g （n1-&gt;n2行中的所有p1用p2替换。缺省则当前行  ）</span><br><span class="line">number  表示跳转到某一行</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2、vim翻页（命令modr插入mode都valid）："><a href="#2、vim翻页（命令modr插入mode都valid）：" class="headerlink" title="2、vim翻页（命令modr插入mode都valid）："></a>2、vim翻页（命令modr插入mode都valid）：</h3><p>pageup          （向上翻页，等效于 ctrl+f）<br>pagedown    （向下翻页，等效于 ctrl+b）</p>
-<h3 id="3、vim下多行（列）选中复制（or剪切）："><a href="#3、vim下多行（列）选中复制（or剪切）：" class="headerlink" title="3、vim下多行（列）选中复制（or剪切）："></a>3、vim下多行（列）选中复制（or剪切）：</h3><ul>
-<li>命令行模式下，将光标移动到需要选中的行的开始，shift+v即进入vim多行选中模式。选中后，y即复制，d即剪切。&lt; 向左缩进，&gt; 向右缩进, == 自动排版.ctrl+c即退出多行选中mode。</li>
-<li>ctrl+v进入多块选中模式（可以选择多列哦）。选中后，y即复制，d即剪切。ctrl+c即退出。</li>
-</ul>
-<h3 id="4、vim二进制编辑："><a href="#4、vim二进制编辑：" class="headerlink" title="4、vim二进制编辑："></a>4、vim二进制编辑：</h3><p>命令行mode下，（打开的时候直接 vim -b  xxx 据说 vim不会在文件末添加 0x0a）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:%!xxd       （会将当前文本使用xxd命令显示，二进制的，可做相应的修改）</span><br><span class="line">:%!xxd -r   （将xxd风格的二进制显示，转成真实的二进制映像写回到原来的文件）</span><br><span class="line">:wq!           （退出）</span><br></pre></td></tr></table></figure></p>
-<h3 id="5、同时打开多个文件："><a href="#5、同时打开多个文件：" class="headerlink" title="5、同时打开多个文件："></a>5、同时打开多个文件：</h3><p>vim -o file1 file2 file3<br>vim -O file1 file2 file3  (只是一个横向一个纵向显示）<br>在已经打开了某个文件的情况下：<br>:sp fileother<br>:vs fileother</p>
-<h3 id="6、配置vim-下面的插件管理似乎更好"><a href="#6、配置vim-下面的插件管理似乎更好" class="headerlink" title="6、配置vim(下面的插件管理似乎更好)"></a><del>6、配置vim</del>(下面的插件管理似乎更好)</h3><p>//for config vim,3 files = .vimrc + taglist_46.zip + ctags-5.8.tar.gz<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /root/Desktop/</span><br><span class="line">unzip taglist_46.zip</span><br><span class="line">cp plugin/taglist.vim /usr/share/vim/vim74/plugin/       (有用的只是这个 taglist.vim )</span><br><span class="line">cp /mnt/hgfs/shareLinux/ctags-5.8.tar.gz .</span><br><span class="line">tar vxzf ctags-5.8.tar.gz &amp;&amp; cd ctags-5.8</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
-<pre><code>taglist即解析当前文件中的函数和宏等，将解析结果以左侧abstract窗口的形式展示
-</code></pre><p>提供的功能即从左侧的abstract直接跳到对应的函数中。</p>
-<pre><code>ctags安装完成后，terminal下运行
-</code></pre><p>#ctag -R .         //即以当前目录为起点递归解析，最后在当前目录下生成tags文件，此后vim即可根据此文件进行跳转<br>                            //（试了很多方法，但貌似这个tags只有放在当前project顶级目录才好用……）</p>
-<p>#vim -t main      //vim打开，直接已main函数作为entry（或者普通mode打开也ok，但应该在tags文件所在目录下运行vim）<br>进入vim后，<br>命令行mode，:tag funcABC  可跳转到 funcABC 定义处，如果有多处定义，则 :tn 和 :tp 可依次向后/前查找匹配的函数。<br>命令行mode，ctrl+] 立即跳转到光标停留的函数的定义处。ctrl+t返回。</p>
-<p>//这个cscope不好用。。。。不如直接grep了<br>find $(pwd) -name “<em>.[ch]” &gt;cscope.files<br>find . -name “</em>.h” -o -name “<em>.c” -o -name “</em>.cpp” &gt; cscope.files</p>
-<p>cscope -bkq -i cscope.files</p>
-<h3 id="7、插件管理："><a href="#7、插件管理：" class="headerlink" title="7、插件管理："></a>7、插件管理：</h3><p>将开源仓库克隆到 ~/.vim/bundle/ 下，取名 Vundle.vim<br>git clone <a href="https://github.com/VundleVim/Vundle.vim.git" target="_blank" rel="noopener">https://github.com/VundleVim/Vundle.vim.git</a> ~/.vim/bundle/Vundle.vim</p>
-<p>Vundle是一个插件管理工具，详细介绍参见github仓库的介绍。 <a href="https://www.cnblogs.com/zhongcq/p/3642794.html" target="_blank" rel="noopener">参考</a></p>
+<li><p>作为服务器的主机( 假定 ip 为 10.28.35.173 ):</p>
 <ul>
-<li><p>安装一个插件：<br>按照 Vundle 要求在~/.vimrc中 Vundle的 begin()和end()之间写上插件名字<br>Plugin ‘tpope/vim-fugitive’<br>然后随便打开一个vim进入命令行输入mode，<br>:BundleInstall     即可安装尚未安装的插件（到~/.vim/bundle/ 下）</p>
+<li><code>sudo docker pull registry</code>  拉取 registry</li>
+<li><code>sudo docker run --name docker-registry -d -p 5000:5000 registry</code><br>  这种情况下其他主机push的images将存储在这个contrainer的 /var/lib/registry/目录下,若container被删除,则push的images也被删除,具体可以使用<br>  sudo docker exec -ti 5566c310cf39 sh 查看,因此经常用下面这个命令:</li>
+<li><p><code>sudo docker run -d -p 5000:5000 -v /home/fang/docker/registry:/var/lib/registry -v /data/config.yml:/etc/docker/registry/config.yml  registry</code> (更常用的命令)<br>  container中关于docker的配置文件在 /etc/docker/registry/config.yml , 修改 config.yml ,storge字段下添加</p>
+<p>  <img src="/2019/01/30/docker-hub/img01.png" alt="img"></p>
+<p>  这样以后其他主机就可以用 <code>curl -I -X DELETE http://10.28.35.173:5000/v2/ddddfang/ubuntu/manifests/sha256:acbb1038a3</code> 删除images了<br>  (ddddfang/ubuntu是使用curl -X 返回的仓库名, acbb1038a3是仓库的sha256值)</p>
 </li>
-<li><p>移除一个插件：<br>按照 Vundle 要求在~/.vimrc中 Vundle的 begin()和end()之间将某个插件去掉<br>然后随便打开一个vim<br>:BundleClean</p>
-</li>
-<li><p>查看目前已经安装的插件：<br>随便打开一个vim<br>:BundleList</p>
-</li>
+<li><code>curl -X GET http://127.0.0.1:5000/v2/_catalog</code>   返回一个json表示已经存在的repos</li>
 </ul>
-<h3 id="参考的配置"><a href="#参考的配置" class="headerlink" title="参考的配置"></a><strong>参考的配置</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">&quot;这个文件是我的vim配置，~/.vimrc</span><br><span class="line">&quot;设置mapleader</span><br><span class="line">let mapleader = &quot;,&quot;</span><br><span class="line"> </span><br><span class="line">&quot;重新加载.vimrc</span><br><span class="line">map &lt;silent&gt; &lt;leader&gt;ss :source ~/.vimrc&lt;cr&gt;</span><br><span class="line">&quot;快速编辑.vimrc</span><br><span class="line">map &lt;silent&gt; &lt;leader&gt;ee :e ~/.vimrc&lt;cr&gt;</span><br><span class="line"> </span><br><span class="line">&quot;当.vimrc文件被编辑的时候自动执行source操作</span><br><span class="line">autocmd! bufwritepost .vimrc source ~/.vimrc</span><br><span class="line"> </span><br><span class="line">&quot;==================================================================================</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&quot;不要生成swap文件，当buffer被丢弃的时候隐藏它</span><br><span class="line">setlocal noswapfile</span><br><span class="line">set bufhidden=hide</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&quot;在状态行上显示光标所在位置的行号和列号(default)</span><br><span class="line">set ruler</span><br><span class="line">set rulerformat=%20(%2*%&lt;%f%=\ %m%r\ %3l\ %c\ %p%%%)</span><br><span class="line"> </span><br><span class="line">&quot;command line 高度设为1</span><br><span class="line">set cmdheight=1</span><br><span class="line"> </span><br><span class="line">&quot;显示行号</span><br><span class="line">set nu</span><br><span class="line"> </span><br><span class="line">&quot;光标移动到buffer的顶部和底部时保持3行距离</span><br><span class="line">set scrolloff=3</span><br><span class="line"> </span><br><span class="line">&quot;制表符为4统一缩进为4</span><br><span class="line">set tabstop=4</span><br><span class="line">set softtabstop=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line"> </span><br><span class="line">&quot;继承前一行的缩进方式，特别适用于多行注释</span><br><span class="line">set autoindent</span><br><span class="line"> </span><br><span class="line">&quot;用空格代替制表符</span><br><span class="line">set expandtab</span><br><span class="line"> </span><br><span class="line">&quot;在搜索的时候忽略大小写</span><br><span class="line">set ignorecase</span><br><span class="line"> </span><br><span class="line">&quot;在搜索时，输入的词句的逐字符高亮(类似firefox的搜索)</span><br><span class="line">set incsearch</span><br><span class="line">&quot;搜到之后高亮</span><br><span class="line">set hlsearch</span><br><span class="line"> </span><br><span class="line">&quot;在处理未保存或只读文件的时候，弹出确认</span><br><span class="line">set confirm</span><br><span class="line"> </span><br><span class="line">&quot;允许backspace和光标键跨越行边界</span><br><span class="line">set whichwrap+=&lt;,&gt;,h,l</span><br><span class="line"> </span><br><span class="line">&quot;即使一行很长也不要auto换行</span><br><span class="line">set nowrap</span><br><span class="line"> </span><br><span class="line">&quot;在被分割的窗口间显示空白，便于阅读</span><br><span class="line">set fillchars=vert:\ ,stl:\ ,stlnc:\</span><br><span class="line"> </span><br><span class="line">&quot;颜色风格</span><br><span class="line">colorscheme torte</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot;  快捷按键映射&quot;</span><br><span class="line">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span><br><span class="line">&quot;保存</span><br><span class="line">map S :wq! &lt;cr&gt;</span><br><span class="line">map Q :q! &lt;cr&gt;</span><br><span class="line">&quot;搜索完毕的时候使用 ctrl+h 清除高亮</span><br><span class="line">map &lt;C-h&gt; :nohl &lt;cr&gt;</span><br><span class="line"> </span><br><span class="line">map &lt;F2&gt; :w!&lt;cr&gt;</span><br><span class="line">map &lt;F4&gt; :wq!&lt;cr&gt;</span><br><span class="line">map &lt;F3&gt; :q!&lt;cr&gt;</span><br><span class="line">&quot;imap = insert mode map,this imap means esc to commad mode and :wq!</span><br><span class="line">imap &lt;F2&gt; &lt;Esc&gt;:w!&lt;cr&gt;</span><br><span class="line">imap &lt;F4&gt; &lt;Esc&gt;:wq!&lt;cr&gt;</span><br><span class="line">imap &lt;F3&gt; &lt;Esc&gt;:q!&lt;cr&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&quot;====================================== TagList =================================</span><br><span class="line">&quot; 按照名称排序</span><br><span class="line">let Tlist_Sort_Type = &quot;name&quot;</span><br><span class="line"> </span><br><span class="line">&quot; 默认打开Taglist</span><br><span class="line">let Tlist_Auto_Open=1</span><br><span class="line"> </span><br><span class="line">&quot; 在左侧显示窗口</span><br><span class="line">let Tlist_Use_Left_Window = 1</span><br><span class="line"> </span><br><span class="line">&quot; 压缩方式</span><br><span class="line">let Tlist_Compart_Format = 1</span><br><span class="line"> </span><br><span class="line">&quot; 如果只有一个buffer，kill窗口也kill掉buffer</span><br><span class="line">let Tlist_Exist_OnlyWindow = 1</span><br><span class="line"> </span><br><span class="line">&quot; 不要显示折叠树</span><br><span class="line">let Tlist_Enable_Fold_Column = 0</span><br><span class="line"> </span><br><span class="line">&quot; 不要关闭其他文件的tags</span><br><span class="line">let Tlist_File_Fold_Auto_Close = 0</span><br><span class="line"> </span><br><span class="line">let Tlist_Show_One_File=1</span><br><span class="line">let Tlist_Exit_OnlyWindow=1</span><br><span class="line"> </span><br><span class="line">&quot; switch on/off taglist</span><br><span class="line">map &lt;C-e&gt; :Tlist&lt;cr&gt;</span><br><span class="line">imap &lt;C-e&gt; &lt;Esc&gt;:Tlist&lt;cr&gt;</span><br><span class="line"> </span><br><span class="line">&quot; switch between taglist and normal code</span><br><span class="line">&quot; its original is double Ctrl+W ...</span><br><span class="line">map ` &lt;C-w&gt;&lt;C-w&gt;</span><br><span class="line"> </span><br><span class="line">&quot;====================================================================</span><br><span class="line">&quot; we find tags file in this path</span><br><span class="line">&quot; refer to .bashrc, alias ct to &lt;generate tags and mv to ~/.vim/tags&gt;</span><br><span class="line">&quot;set tags=tags;</span><br><span class="line">map &lt;C-n&gt; :tn&lt;cr&gt;</span><br><span class="line">map &lt;C-p&gt; :tp&lt;cr&gt;</span><br></pre></td></tr></table></figure>
-<p>修正vi编辑器：<br>vi/vim编辑器在linux中是非常常用的文本编辑工具，但不一定好使，比如编辑的时候可能按方向键会出现莫名奇妙的字符，还有按backspace退格键也可能没有任何作用。修正方法,Terminal中输入 sudo vi /etc/vim/vimrc.tiny 使用vi打开vi的配置文件来修正配置，是不是有点诡异？没关系，能行的。然后按Esc键进入vi编辑器的命令模式， 输入 :set nocompatible （注意不要忘记前面的 ： 符号，回车， 此时方向键暂时可以正常使用了，然后按Esc键，输入 ：set backspace=2 ，此时删除键也能临时工作了。<br>然后按方向键找到 配置文件的 set compatible 一行，按i键进入编辑模式， 将它改为 set nocompatible<br>完了在下一行输入 set backspace=2 ，好了，按Esc键，再键入 ：x 保存并退出vi， 以后vi就可以正常使用了</p>
+</li>
+<li><p>在其他主机上:</p>
+<pre><code>* `sudo vim /etc/default/docker`
+    添加一行  DOCKER_OPTS=&quot;--insecure-registry 10.28.35.173:5000&quot;
+* `sudo vim /lib/systemd/system/docker.service`
+    + 添加 &quot;EnvironmentFile=-/etc/default/docker&quot;,
+    + 将 &quot;ExecStart=/usr/bin/dockerd -H fd://&quot; 改为 &quot;ExecStart=/usr/bin/dockerd -H fd:// $DOCKER_OPTS&quot;
+* `systemctl daemon-reload`(没有这个命令的貌似只能重启机器了??)
+* `service docker restart`
+* 然后进行push操作
+    + `sudo docker tag &lt;imageid&gt; 10.28.35.173:5000/ubuntu:1604`     # tagged image ==&gt;  (10.28.35.173:5000/ubuntu:1604)
+    + `sudo docker push 10.28.35.173:5000/ubuntu:1604`
+* `curl -X GET http://10.28.35.173:5000/v2/_catalog`   返回一个json表示已经存在的repos
+</code></pre></li>
+<li><p>其他主机上下载:</p>
+<pre><code>* `sudo docker pull 10.28.35.78:5000/ubuntu:1604`
+</code></pre></li>
+</ul>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
-            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/01/28/vim/">https://ddddfang.github.io/2019/01/28/vim/</a>
-            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/01/28/vim/">January 28th 2019, 5:13:50 pm</a>
-            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/01/28/vim/">January 30th 2019, 1:57:19 pm</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/01/30/docker-hub/">https://ddddfang.github.io/2019/01/30/docker-hub/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/01/30/docker-hub/">January 30th 2019, 2:05:29 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/01/30/docker-hub/">January 30th 2019, 2:15:31 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -458,17 +450,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/01/28/static-dynamic-library/" title="static-dynamic-library">
-                    <div class="nextTitle">static-dynamic-library</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/01/28/使用github/" title="使用github">
-                    <div class="prevTitle">使用github</div>
+                <a href="/2019/01/30/docker-file/" title="docker-file">
+                    <div class="prevTitle">docker-file</div>
                 </a>
             
         </li>
@@ -580,7 +567,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、vim命令mode下快捷命令"><span class="toc-number">1.</span> <span class="toc-text">1、vim命令mode下快捷命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、vim翻页（命令modr插入mode都valid）："><span class="toc-number">2.</span> <span class="toc-text">2、vim翻页（命令modr插入mode都valid）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、vim下多行（列）选中复制（or剪切）："><span class="toc-number">3.</span> <span class="toc-text">3、vim下多行（列）选中复制（or剪切）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、vim二进制编辑："><span class="toc-number">4.</span> <span class="toc-text">4、vim二进制编辑：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、同时打开多个文件："><span class="toc-number">5.</span> <span class="toc-text">5、同时打开多个文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、配置vim-下面的插件管理似乎更好"><span class="toc-number">6.</span> <span class="toc-text">6、配置vim(下面的插件管理似乎更好)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、插件管理："><span class="toc-number">7.</span> <span class="toc-text">7、插件管理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考的配置"><span class="toc-number">8.</span> <span class="toc-text">参考的配置</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-hub"><span class="toc-number">1.</span> <span class="toc-text">docker hub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-使用-docker-hub-服务器"><span class="toc-number">1.1.</span> <span class="toc-text">1. 使用 docker hub 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用私有hub"><span class="toc-number">1.2.</span> <span class="toc-text">2. 使用私有hub</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
