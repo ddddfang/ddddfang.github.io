@@ -346,6 +346,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/static-dynamic-library/">
+            
+                <span>static-dynamic-library</span>
+        </a>
+        <div class="abstract-content">
+            1.linux下.a与.so文件：
+.a文件是静态链接库，一般生成的时候所需的所有依赖都在其中（所以.a文件通常比较大），使用.a文件的binary会将其当作普通.o文件一样完全拷贝至binary(link也可)，运行时不需要.a文件在场
+.so文件是共享链接库，一般生成的时候只包括本project，不会将依赖的库拷贝（即大多也是使用的.so，所以.so文件通常比较小），使用.so的binary可以在compile时候（只是检查一下并记录函数位置）或者运行时将.so加载，运行时需要.so文件在场
+
+2.别人提供了.a/.so文件，如何使用？（.so）makefile，link时，-L -...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/28/vim/">
             
                 <span>vim</span>
@@ -1009,9 +1042,20 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 27
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -1024,6 +1068,11 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href="/2019/01/31/gitbook/">gitbook</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1171,13 +1220,13 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
     
-        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
-    
-        <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
-    
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
@@ -1186,6 +1235,8 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
@@ -1250,9 +1301,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
-        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
-    
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
         <span class="sidebar-category-name" data-categories="ffmpeg"><span class="iconfont-archer">&#xe60a;</span>ffmpeg</span>
     
