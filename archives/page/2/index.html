@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/cmake/">
+            
+                <span>cmake</span>
+        </a>
+        <div class="abstract-content">
+            #Cmake自动构建工具，在当前目录下创建 CmakeLists.txt 和 build 目录
+#cd build 目录后执行 cmake .. （../ 下必须存在一个名为 CmakeLists.txt 的文件）即可
+#定义工程名字 HELLO，会自动隐式创建两个变量 HELLO_BINARY_DIR 和  HELLO_SOURCE_DIRPROJECT (HELLO)SET(SRC_LIST aes-cmac.c TI_aes_128.c)
+#XXX_BINARY_DIR 一般就是 cmake 执行时候的目录。变量的引用必须 ${ }（IF 语句是唯一的例外）MESSAGE(STAT...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/caffe/">
             
                 <span>caffe</span>
@@ -647,45 +681,6 @@ p 粘帖
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/使用github/">
-            
-                <span>使用github</span>
-        </a>
-        <div class="abstract-content">
-            使用github作为自己的服务器settings进入管理，里面有自己的各种仓库和ssh keys（配置了ssh-key之后理论上通过ssh 方式 clone的自己的仓库就不再需要每次上传都需要密码了，这一点与通过https方式clone的仓库是有区别的）。
-
-your profile进入自己的首页。
-点击左上github图标则创建新的空仓库(或者+号)。
-进入别人的仓库，然后fork则相当于git clone。
-进入自己的某个项目后点击setting，options里含有删除本仓库的选项。
-collaborators则可以添加协作开发者
-
-探索github：explore-&gt;Tre...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
     
 </div>
             
@@ -1165,9 +1160,24 @@ collaborators则可以添加协作开发者
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 31
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1180,6 +1190,11 @@ collaborators则可以添加协作开发者
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2019/02/13/max-heap/">max-heap</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1392,6 +1407,8 @@ collaborators则可以添加协作开发者
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
+    
+        <span class="sidebar-tag-name" data-tags="最大堆(大顶堆)"><span class="iconfont-archer">&#xe606;</span>最大堆(大顶堆)</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
     

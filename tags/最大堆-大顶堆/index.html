@@ -346,139 +346,29 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/disk/">
+        <a class="abstract-title" href="/2019/02/13/max-heap/">
             
-                <span>disk ===&gt; fdisk mount df</span>
+                <span>max-heap</span>
         </a>
         <div class="abstract-content">
-            树莓派那里有个例子
-1. 查看磁盘状态
-df -h       （这个命令显示系统已经挂载的各硬盘及他们所在的挂载点）
-fdisk -l    （这个命令可以将还没挂载的block也列出来，fdisk /dev/sdb 就可以针对u盘等设备格式化或分区了，常用的有p显示分区,d删除分区,n新建分区）
+            1. 概述: 最大堆(大顶堆)一句话 heap：一种数据结构，完全二叉树（若二叉树高 h，则除过最底层 h 层，其他 1~h-1 层都是满的；并且最底层从左到右不能有空隙）。有最大堆和最小堆两种，最大堆即根节点的键值比其他所有节点键值都大；最小堆即根节点的键值比其他所有节点键值都小。在实现上，它没有选择一般的二叉树数据结构（即一个节点包含指向两个孩子的指针），使用的是数组；heap 最为常用的操作是上溯和下溯，在“维持堆”和“堆排序”中经常用到。
+最小堆和最大堆思路如出一辙，只讨论最大堆。对于一个大顶堆，如下结论成立:
 
-2. 给盘分区并格式化若盘已经挂载则 sudo umount /dev/sdb (若是有多个分区就挨个umount /dev/sdb1 , umount /dev/sdb2)
+数组从 index为 1 的地方开始存放第一个节点：
 
-2.1. 分区(一个磁盘应该至少有一个分区,不然可能会出问题)
-123456sudo fdisk /dev/sd...
+
+第 i ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/13</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/dd/">
-            
-                <span>dd</span>
-        </a>
-        <div class="abstract-content">
-            1. 搞openwrt用到puppy linux时，直接将系统镜像写入到硬盘（重新启动从硬盘加载就变成 openwrt 对应的操作系统了）1dd if=openwrt-x86-generic-combined-ext2.img of=/dev/sda
-2.将bin文件作为镜像写入软盘 (于渊：所谓镜像，可理解为原始设备的逐字节复制。如软盘的第m个字节对应文件的第m个字节)12nasm boot.asm -o boot.bindd if=boot.bin of=/dev/fd0 bs=512 count=1 conv=notrunc
-3.小测试12345dd if=/dev/zero of...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/xxd/">
-            
-                <span>xxd</span>
-        </a>
-        <div class="abstract-content">
-            xxd: 二进制显示和处理文件工具,cat: 以文本方式ASCII显示文件
-xxd -s 0x30 file skip file 的前 0x30 bytes后显示file
-xxd -s -0x30 file skip file 的 (size-0x30) bytes后显示file（其实就是显示file的最后 0x30 bytes）
-xxd -s 0x28 -l 120 -c 12 file skip file的0x28bytes后，显示 len=120 bytes的内容，每行显示12 bytes(column=12)
-xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/sed/">
-            
-                <span>sed</span>
-        </a>
-        <div class="abstract-content">
-            1. sed替换的基本语法为:
-sed &#39;s/原字符串/替换字符串/&#39; 单引号里面,s表示替换,三根斜线中间是替换的样式,特殊字符需要使用反斜线”\”进行转义。
-
-2. 单引号” ‘ ’”是没有办法用反斜线”\”转义的,这时候只要把命令中的单引号改为双引号就行了,格式如下：
-sed &quot;s/原字符串包含&#39;/替换字符串包含&#39;/&quot; # 要处理的字符包含单引号
-
-3. 命令中的三根斜线分隔符可以换成别的符号,有时候替换目录字符串的时候有较多斜线，这个时候换成其它的分割符是较为方便,只需要紧跟s定义即可。
-sed &#39;s?原字符串?替换字符...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="最大堆(大顶堆)">最大堆(大顶堆)</a>
     
 </div>
             
