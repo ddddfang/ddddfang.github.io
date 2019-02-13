@@ -359,6 +359,43 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/11/docker-basic/">
+            
+                <span>docker-basic</span>
+        </a>
+        <div class="abstract-content">
+            docker基础
+docekr 相当于超轻量级虚拟机,大部分代码应该属于隔离而非通信(因为docker最终都是调用的真是机器*nix)
+ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os的实现,而是docker的沙箱/壳实现
+在沙箱中apt-get install 会体现到沙箱提供的文件系统(隔离code)等,所以主机看不到沙箱里面,沙箱也看不到外面
+其他 image 应该是沙箱+应用的集合,从虚拟机观点看,每个应用都附着在其os沙箱上,多个应用合作必然会启动多个os, 但这个os反映到真实机器上就是我们的宿主机一个而已
+
+1.ubunt...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/03/ffmpeg学习资料/">
             
                 <span>ffmpeg学习资料</span>
@@ -1013,9 +1050,30 @@ ffmpeg notes
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 33
         </div>
         <!-- search  -->
         
@@ -1028,6 +1086,11 @@ ffmpeg notes
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2019/02/13/cpp-sort/">cpp---sort</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1208,6 +1271,8 @@ ffmpeg notes
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
@@ -1225,8 +1290,6 @@ ffmpeg notes
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
@@ -1292,6 +1355,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     

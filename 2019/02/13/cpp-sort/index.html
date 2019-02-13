@@ -22,7 +22,7 @@
     <meta name="description" content="nothing to be told">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ddddfang&#39;s Blog</title>
+    <title>cpp---sort · ddddfang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ddddfang&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">cpp---sort</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ddddfang's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            cpp---sort
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="排序">排序</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/13</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,350 +399,109 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/31/gitbook/">
-            
-                <span>gitbook</span>
-        </a>
-        <div class="abstract-content">
-            https://blog.csdn.net/lu_embedded/article/details/81100704
-http://gitbook.zhangjikai.com/themes.html
-https://www.jianshu.com/p/421cc442f06c
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitbook">gitbook</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="c-中的sort接口"><a href="#c-中的sort接口" class="headerlink" title="c++中的sort接口"></a><a href="https://www.cnblogs.com/TX980502/p/8528840.html" target="_blank" rel="noopener">c++中的sort接口</a></h2><table>
+<thead>
+<tr>
+<th>接口</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sort</td>
+<td>对给定区间所有元素进行排序</td>
+</tr>
+<tr>
+<td>stable_sort</td>
+<td>对给定区间所有元素进行稳定排序</td>
+</tr>
+<tr>
+<td>partial_sort</td>
+<td>对给定区间所有元素部分排序</td>
+</tr>
+<tr>
+<td>partial_sort_copy</td>
+<td>对给定区间复制并排序</td>
+</tr>
+<tr>
+<td>nth_element</td>
+<td>找出给定区间的某个位置对应的元素</td>
+</tr>
+<tr>
+<td>is_sorted</td>
+<td>判断一个区间是否已经排好序</td>
+</tr>
+<tr>
+<td>partition</td>
+<td>使得符合某个条件的元素放在前面</td>
+</tr>
+<tr>
+<td>stable_partition</td>
+<td>相对稳定的使得符合某个条件的元素放在前面</td>
+</tr>
+</tbody>
+</table>
+<p>需要头文件<algorithm><br>语法描述：sort（begin，end，cmp），cmp参数可以没有，如果没有默认非降序排序。</algorithm></p>
+<p>以int为例的基本数据类型的sort使用<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>&#125;;</span><br><span class="line">    sort(a,a+<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="string">' '</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为没有cmp参数，默认为非降序排序，结果为：1 2 3 4 5<br>若设计为非升序排序，则cmp函数的编写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> cmp（<span class="keyword">int</span> a,<span class="keyword">int</span> b）</span><br><span class="line">&#123;</span><br><span class="line">　　<span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于简单的任务（类型支持“&lt;”、“&gt;”等比较运算符），完全没必要自己写function。标准库里已经有现成的了，就在functional里，include进来就行了。functional提供了一堆基于模板的比较函数对象。它们是（看名字就知道意思了）：equal_to<type>、not_equal_to<type>、greater<type>、greater_equal<type>、less<type>、less_equal<type>。对于这个问题来说，greater和less就足够了，直接拿过来用：</type></type></type></type></type></type></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//升序：sort(begin,end,less&lt;data-type&gt;());</span></span><br><span class="line"><span class="comment">//降序：sort(begin,end,greater&lt;data-type&gt;()).</span></span><br><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span> <span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">20</span>]=&#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">23</span>,<span class="number">5</span>,<span class="number">76</span>,<span class="number">0</span>,<span class="number">43</span>,<span class="number">24</span>,<span class="number">65</span>&#125;,i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    sort(a,a+<span class="number">20</span>,greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">20</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个字符串内部字符排序, 使用迭代器可以完成顺序排序:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(<span class="string">"hello world"</span>)</span></span>;</span><br><span class="line">    sort(str.begin(),str.end());</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;str;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：空格dehllloorw<br>使用反向迭代器可以完成逆序排序:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(<span class="string">"hello world"</span>)</span></span>;</span><br><span class="line">    sort(str.rbegin(),str.rend());</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;str;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>结果：wroolllhde空格<br>字符串间的比较排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring &gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        getline(<span class="built_in">cin</span>,a[i]);</span><br><span class="line">    sort(a,a+<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以结构体为例的二级排序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">link</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(link x,link y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x.a==y.a)</span><br><span class="line">        <span class="keyword">return</span> x.b&gt;y.b;</span><br><span class="line">    <span class="keyword">return</span> x.a&gt;y.a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    link x[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;x[i].a&gt;&gt;x[i].b;</span><br><span class="line">    sort(x,x+<span class="number">4</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;x[i].a&lt;&lt;<span class="string">' '</span>&lt;&lt;x[i].b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="qsort-与sort"><a href="#qsort-与sort" class="headerlink" title="qsort()与sort()"></a>qsort()与sort()</h2><p>与sort相比,qsort是使用快速排序的算法,更底层一些,需要自己编写cmp函数(默认是升序排序).<strong>可以认为sort是改进版的qsort</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIZE 100</span></span><br><span class="line"><span class="keyword">int</span> gArray[SIZE] = &#123;……&#125;;</span><br><span class="line"><span class="comment">//string gArray[SIZE] = &#123;……&#125;;</span></span><br><span class="line"><span class="comment">//structABC gArray[SIZE] = &#123;……&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> * a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (*(<span class="keyword">int</span> *)a - *(<span class="keyword">int</span> *)b);    <span class="comment">//a&gt;b 返回正，则递增排序</span></span><br><span class="line">&#125;</span><br><span class="line">qsort(gArray, SIZE, <span class="keyword">sizeof</span>(gArray[<span class="number">0</span>]), cmp);</span><br></pre></td></tr></table></figure>
+<h2 id="c-排序并保留索引"><a href="#c-排序并保留索引" class="headerlink" title="c++排序并保留索引"></a><a href="https://blog.csdn.net/shuzfan/article/details/52712923" target="_blank" rel="noopener">c++排序并保留索引</a></h2><p>C++自带的排序函数sort只能获得排好序的值，没办法像Matlab一样同时返回排序索引。下面使用c++11中的 lambda来为sort函数添加一个模式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; sort_indexes(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;T&gt; &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 初始化索引向量</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; idx(v.size());</span><br><span class="line">    <span class="comment">//使用iota对向量赋 0~？的连续值</span></span><br><span class="line">    iota(idx.begin(), idx.end(), <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 通过比较v的值对索引idx进行排序</span></span><br><span class="line">    sort(   idx.begin(),</span><br><span class="line">            idx.end(),</span><br><span class="line">            [&amp;v](<span class="keyword">size_t</span> i1, <span class="keyword">size_t</span> i2) &#123;<span class="keyword">return</span> v[i1] &lt; v[i2];&#125;  );</span><br><span class="line">    <span class="keyword">return</span> idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的是升序排列，如果想要降序排列，只需要更改为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&amp;v](<span class="keyword">size_t</span> i1, <span class="keyword">size_t</span> i2) &#123;<span class="keyword">return</span> v[i1] &gt; v[i2];&#125;</span><br></pre></td></tr></table></figure>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/docker-apps/">
-            
-                <span>docker-apps</span>
-        </a>
-        <div class="abstract-content">
-            搭建一个个人博客：https://www.jianshu.com/p/3c6c9d964cb4docker run –name mysql-01 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysqldocker run –name wp -p 80:80 –link mysql-01:mysql -d wordpress然后 ifconfig 查看下本机的ip（或者直接用127.0.0.1也可），然后打开浏览器输入 :80 即可看到wordpress的安装界面，设置完成用户名和密码即可进入posts–&gt;add new 就是发布新文章（因为...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">https://ddddfang.github.io/2019/02/13/cpp-sort/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">February 13th 2019, 2:20:01 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">February 13th 2019, 2:54:49 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
-            
-                <span>printf-可变参数</span>
-        </a>
-        <div class="abstract-content">
-            12345typedef char *va_list;   //va_list就是个普通的指向char类型的指针而已#define _INTSIZEOF(n)   (  (sizeof(n)+sizeof(int)-1)&amp; ~(sizeof(int)-1)  ) //这是获取某个类型的长度，并按照int长度为边界对齐，不足4bytes补足，因为栈宽度为4bytes#define va_start(ap,v)  (ap=(va_list)&amp;v + _INTSIZEOF(v)) //这就是使ap指向v的以int长度为边界的后一个位置#define va_arg(ap, typ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="printf 可变参数">printf 可变参数</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/cmake/">
-            
-                <span>cmake</span>
-        </a>
-        <div class="abstract-content">
-            #Cmake自动构建工具，在当前目录下创建 CmakeLists.txt 和 build 目录
-#cd build 目录后执行 cmake .. （../ 下必须存在一个名为 CmakeLists.txt 的文件）即可
-#定义工程名字 HELLO，会自动隐式创建两个变量 HELLO_BINARY_DIR 和  HELLO_SOURCE_DIRPROJECT (HELLO)SET(SRC_LIST aes-cmac.c TI_aes_128.c)
-#XXX_BINARY_DIR 一般就是 cmake 执行时候的目录。变量的引用必须 ${ }（IF 语句是唯一的例外）MESSAGE(STAT...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/杂谈/">
-            
-                <span>杂谈</span>
-        </a>
-        <div class="abstract-content">
-            关于画图
-uml类图, startUML 看起来还不错,但是我想画的并不是标准的类图,而是随心所欲的数据结构图, https://www.cnblogs.com/shindo/p/5579191.html
-process on,在线做图,傻瓜式,但是功能少
-draw.io,目前发现的最适合我的画图软件,支持和github帐号绑定,从github sync非常赞,创建的时候选择 软件（程序员）, 这里可以下载draw.io的离线版本. linux的离线版本可能有点问题，使用minphone的方法，先将star-uml的tar.gz包解压，然后将window下exe安装后的C:\Progra...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="draw.io">draw.io</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vscode">vscode</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="office2016 密钥">office2016 密钥</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/docker-hub/">
-            
-                <span>docker-hub</span>
-        </a>
-        <div class="abstract-content">
-            docker hub1. 使用 docker hub 服务器12345注册dockerhub帐号sudo docker login  填写用户名和密码sudo docker tag &lt;imageID&gt; ddddfang/ubuntu:tag   ddddfang是账户的名字,所以在push之前需要将image名字改成&lt;账户名/xxx:tag&gt;这种形式(sudo docker rmi -f imagename:tag    删除某个tag,此时不可以使用imagesid,因为多个tag对应的imagesid是相同的)sudo docker push
-2. 使用私有h...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/docker-file/">
-            
-                <span>docker-file</span>
-        </a>
-        <div class="abstract-content">
-            参看《第一本dockers书》p80
-docker之dockerfile实践v1先查看下本地的镜像，选一个作为base image：
-123[root@docker ~]# docker imagesREPOSITORY       TAG          IMAGE ID             CREATED          SIZEcentos           latest       196e0ce0c9fb    6 weeks ago      197MB
-接下来开始编写Dockerfile文件（注意Dockerfile的D需要大写），这里以编译nginx提供web服...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/29/makefile2/">
-            
-                <span>makefile2</span>
-        </a>
-        <div class="abstract-content">
-            DEMO 1configurate脚本，就是一段bash脚本
-123456789101112131415161718192021222324252627282930313233343536373839# linux系统除了提供位置参数还提供内置参数，内置参数如下：　# $0 ----脚本名称# $# ----传递给程序的总的参数数目 　# $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值。 　　# $* ----传递给程序的所有参数组成的字符串。（尽量使用$@并将其用双引号括起来） 　　# $@----以&quot;参数1&quot;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/makefile/">
-            
-                <span>makefile</span>
-        </a>
-        <div class="abstract-content">
-            1. gnu make in detail for deginners&lt;以下为gnu make in detail for beginners的删减版,完整的在这里&gt;
-Have you ever peeked into the source code of any of the applications you run every day? Ever used make install to install some application? You will see make in most projects. It enables developers to easily...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/perforce/">
-            
-                <span>perforce</span>
-        </a>
-        <div class="abstract-content">
-            P4 使用1、如果需要修改某一个文件，可以先在 depot 页面 checkout（checkout 所做的工作就是 1、git reset 到 stash 这一级，并将workspace中对应文件变成可写  2、这样在右边 pending 页面中，diff against 就可以查看checkout的文件改动了）2、如果需要删除某一个文件，可以在depot 页面 mark for delete3、如果需要添加一个文件，在 workspace 页面 mark for add
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="p4">p4</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/13/max-heap/" title="max-heap">
+                    <div class="prevTitle">max-heap</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/tags/common-misc/page/2/">2</a><a class="extend next" rel="next" href="/tags/common-misc/page/2/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -759,6 +579,24 @@ Have you ever peeked into the source code of any of the applications you run eve
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#c-中的sort接口"><span class="toc-number">1.</span> <span class="toc-text">c++中的sort接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qsort-与sort"><span class="toc-number">2.</span> <span class="toc-text">qsort()与sort()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-排序并保留索引"><span class="toc-number">3.</span> <span class="toc-text">c++排序并保留索引</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1508,6 +1346,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

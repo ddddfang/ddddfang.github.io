@@ -359,6 +359,37 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
+            
+                <span>printf-可变参数</span>
+        </a>
+        <div class="abstract-content">
+            12345typedef char *va_list;   //va_list就是个普通的指向char类型的指针而已#define _INTSIZEOF(n)   (  (sizeof(n)+sizeof(int)-1)&amp; ~(sizeof(int)-1)  ) //这是获取某个类型的长度，并按照int长度为边界对齐，不足4bytes补足，因为栈宽度为4bytes#define va_start(ap,v)  (ap=(va_list)&amp;v + _INTSIZEOF(v)) //这就是使ap指向v的以int长度为边界的后一个位置#define va_arg(ap, typ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="printf 可变参数">printf 可变参数</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/30/cmake/">
             
                 <span>cmake</span>
@@ -654,46 +685,6 @@ Have you ever peeked into the source code of any of the applications you run eve
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/28/vim/">
-            
-                <span>vim</span>
-        </a>
-        <div class="abstract-content">
-            12&lt;&lt;  向左缩进&gt;&gt;  向左缩进
-1、vim命令mode下快捷命令（插入mode——ESC—–&gt;命令mode）：（命令mode——   i  —–&gt;插入mode）：
-
-/name 从光标开始处向文件尾搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）
-?name 从光标开始处向文件头搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）（这个不常用）
-u 取消前一个操作（相当于撤销）
-[n]yy 拷贝当前开始的n行（省略n则只拷贝当前行）
-[n]dd 删除当前开始的n行（省略n则只删除当前行）
-p 粘帖
-:xx  执...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
     
 </div>
             
@@ -1278,9 +1269,30 @@ p 粘帖
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 33
         </div>
         <!-- search  -->
         
@@ -1293,6 +1305,11 @@ p 粘帖
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2019/02/13/cpp-sort/">cpp---sort</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1473,6 +1490,8 @@ p 粘帖
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
@@ -1490,8 +1509,6 @@ p 粘帖
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
@@ -1557,6 +1574,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     

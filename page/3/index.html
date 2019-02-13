@@ -359,6 +359,46 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/vim/">
+            
+                <span>vim</span>
+        </a>
+        <div class="abstract-content">
+            12&lt;&lt;  向左缩进&gt;&gt;  向左缩进
+1、vim命令mode下快捷命令（插入mode——ESC—–&gt;命令mode）：（命令mode——   i  —–&gt;插入mode）：
+
+/name 从光标开始处向文件尾搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）
+?name 从光标开始处向文件头搜索名为name的字符串（所有完毕后，按n查找下一个，N查找上一个）（这个不常用）
+u 取消前一个操作（相当于撤销）
+[n]yy 拷贝当前开始的n行（省略n则只拷贝当前行）
+[n]dd 删除当前开始的n行（省略n则只删除当前行）
+p 粘帖
+:xx  执...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vim">vim</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/28/使用github/">
             
                 <span>使用github</span>
@@ -688,43 +728,6 @@ git init  --bare 初始化一...
         <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/docker-basic/">
-            
-                <span>docker-basic</span>
-        </a>
-        <div class="abstract-content">
-            docker基础
-docekr 相当于超轻量级虚拟机,大部分代码应该属于隔离而非通信(因为docker最终都是调用的真是机器*nix)
-ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os的实现,而是docker的沙箱/壳实现
-在沙箱中apt-get install 会体现到沙箱提供的文件系统(隔离code)等,所以主机看不到沙箱里面,沙箱也看不到外面
-其他 image 应该是沙箱+应用的集合,从虚拟机观点看,每个应用都附着在其os沙箱上,多个应用合作必然会启动多个os, 但这个os反映到真实机器上就是我们的宿主机一个而已
-
-1.ubunt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
             
@@ -1309,9 +1312,30 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 32
+        Total : 33
         </div>
         <!-- search  -->
         
@@ -1324,6 +1348,11 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/13</span><a class="archive-post-title" href="/2019/02/13/cpp-sort/">cpp---sort</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1504,6 +1533,8 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
@@ -1521,8 +1552,6 @@ ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os
         <span class="sidebar-tag-name" data-tags="p4"><span class="iconfont-archer">&#xe606;</span>p4</span>
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
@@ -1588,6 +1617,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
