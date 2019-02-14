@@ -359,6 +359,38 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/perforce/">
+            
+                <span>perforce</span>
+        </a>
+        <div class="abstract-content">
+            P4 使用1、如果需要修改某一个文件，可以先在 depot 页面 checkout（checkout 所做的工作就是 1、git reset 到 stash 这一级，并将workspace中对应文件变成可写  2、这样在右边 pending 页面中，diff against 就可以查看checkout的文件改动了）2、如果需要删除某一个文件，可以在depot 页面 mark for delete3、如果需要添加一个文件，在 workspace 页面 mark for add
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="p4">p4</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/28/static-dynamic-library/">
             
                 <span>static-dynamic-library</span>
@@ -665,67 +697,6 @@ sed &#39;s?原字符串?替换字符...
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
-            
-                <span>gdb</span>
-        </a>
-        <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
-
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
     
 </div>
             
@@ -1344,9 +1315,20 @@ delet...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 35
         </div>
         <!-- search  -->
         
@@ -1359,6 +1341,11 @@ delet...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href="/2019/02/14/learn-caffe-code/">learn-caffe-code</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1407,12 +1394,12 @@ delet...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
         </li>
     
     
@@ -1482,12 +1469,12 @@ delet...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
         </li>
     
     
@@ -1537,21 +1524,21 @@ delet...
     
         <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
     
-        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
-    
-        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
-    
-        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
         <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
@@ -1561,9 +1548,9 @@ delet...
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
-    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1571,11 +1558,11 @@ delet...
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
@@ -1587,11 +1574,11 @@ delet...
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
+        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
+    
         <span class="sidebar-tag-name" data-tags="最大堆(大顶堆)"><span class="iconfont-archer">&#xe606;</span>最大堆(大顶堆)</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
-    
-        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="红黑树"><span class="iconfont-archer">&#xe606;</span>红黑树</span>
     
@@ -1632,11 +1619,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
-        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
     
-        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
