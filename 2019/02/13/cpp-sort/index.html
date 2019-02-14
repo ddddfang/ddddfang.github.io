@@ -460,7 +460,7 @@ height:50vh;
 <h2 id="qsort-与sort"><a href="#qsort-与sort" class="headerlink" title="qsort()与sort()"></a>qsort()与sort()</h2><p>与sort相比,qsort是使用快速排序的算法,更底层一些,需要自己编写cmp函数(默认是升序排序).<strong>可以认为sort是改进版的qsort</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIZE 100</span></span><br><span class="line"><span class="keyword">int</span> gArray[SIZE] = &#123;……&#125;;</span><br><span class="line"><span class="comment">//string gArray[SIZE] = &#123;……&#125;;</span></span><br><span class="line"><span class="comment">//structABC gArray[SIZE] = &#123;……&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> * a, <span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (*(<span class="keyword">int</span> *)a - *(<span class="keyword">int</span> *)b);    <span class="comment">//a&gt;b 返回正，则递增排序</span></span><br><span class="line">&#125;</span><br><span class="line">qsort(gArray, SIZE, <span class="keyword">sizeof</span>(gArray[<span class="number">0</span>]), cmp);</span><br></pre></td></tr></table></figure>
 <h2 id="c-排序并保留索引"><a href="#c-排序并保留索引" class="headerlink" title="c++排序并保留索引"></a><a href="https://blog.csdn.net/shuzfan/article/details/52712923" target="_blank" rel="noopener">c++排序并保留索引</a></h2><p>C++自带的排序函数sort只能获得排好序的值，没办法像Matlab一样同时返回排序索引。下面使用c++11中的 lambda来为sort函数添加一个模式：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; sort_indexes(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;T&gt; &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 初始化索引向量</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; idx(v.size());</span><br><span class="line">    <span class="comment">//使用iota对向量赋 0~？的连续值</span></span><br><span class="line">    iota(idx.begin(), idx.end(), <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 通过比较v的值对索引idx进行排序</span></span><br><span class="line">    sort(   idx.begin(),</span><br><span class="line">            idx.end(),</span><br><span class="line">            [&amp;v](<span class="keyword">size_t</span> i1, <span class="keyword">size_t</span> i2) &#123;<span class="keyword">return</span> v[i1] &lt; v[i2];&#125;  );</span><br><span class="line">    <span class="keyword">return</span> idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; sort_indexes(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;T&gt; &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 初始化索引向量</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">size_t</span>&gt; idx(v.size());</span><br><span class="line">    <span class="comment">//使用iota对向量赋 0~？的连续值</span></span><br><span class="line">    iota(idx.begin(), idx.end(), <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 通过比较v的值对索引idx进行排序</span></span><br><span class="line">    sort(   idx.begin(),</span><br><span class="line">            idx.end(),</span><br><span class="line">            [&amp;v](<span class="keyword">size_t</span> i1, <span class="keyword">size_t</span> i2) &#123;<span class="keyword">return</span> v[i1] &lt; v[i2];&#125;  );    <span class="comment">//以v[]的值的比较结果作为基准,v[]没有被改写</span></span><br><span class="line">    <span class="keyword">return</span> idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的是升序排列，如果想要降序排列，只需要更改为：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&amp;v](<span class="keyword">size_t</span> i1, <span class="keyword">size_t</span> i2) &#123;<span class="keyword">return</span> v[i1] &gt; v[i2];&#125;</span><br></pre></td></tr></table></figure>
     </article>
@@ -470,13 +470,18 @@ height:50vh;
             <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
             </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">https://ddddfang.github.io/2019/02/13/cpp-sort/</a>
             </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">February 13th 2019, 2:20:01 pm</a>
-            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">February 13th 2019, 2:54:49 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/13/cpp-sort/">February 13th 2019, 3:54:47 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/02/14/cpp-define/" title="cpp---define">
+                    <div class="nextTitle">cpp---define</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1023,9 +1028,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1038,6 +1056,11 @@ top:50vh;
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href="/2019/02/14/cpp-define/">cpp---define</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1081,12 +1104,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
         </li>
     
     
@@ -1156,12 +1179,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
         </li>
     
     
@@ -1211,19 +1234,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
     
+        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
+    
+        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
         <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
-    
-        <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
-    
-        <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
     
@@ -1233,9 +1258,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1243,11 +1268,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
-        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
@@ -1259,11 +1284,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
     
-        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
-    
         <span class="sidebar-tag-name" data-tags="最大堆(大顶堆)"><span class="iconfont-archer">&#xe606;</span>最大堆(大顶堆)</span>
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
+    
+        <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
         <span class="sidebar-tag-name" data-tags="红黑树"><span class="iconfont-archer">&#xe606;</span>红黑树</span>
     
@@ -1304,11 +1329,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
-        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
     
-        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     

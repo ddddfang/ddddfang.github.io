@@ -22,7 +22,7 @@
     <meta name="description" content="nothing to be told">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ddddfang&#39;s Blog</title>
+    <title>cpp---define · ddddfang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ddddfang&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">cpp---define</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ddddfang's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            cpp---define
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="宏">宏</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,40 +399,129 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/list/">
-            
-                <span>list</span>
-        </a>
-        <div class="abstract-content">
-            list.h这个list.h其实是linux内核中链表实现的精简版(只需要一个头文件)，linux提供的这套接口更像是构造list的零部件。用户可以选择直接用它定制化自己的 list型数据结构，甚至可以实现一个更为 高层次的、通用的 list接口（如下面的clist）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="链表">链表</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="1-define基本用法"><a href="#1-define基本用法" class="headerlink" title="1. define基本用法"></a>1. define基本用法</h2><p>#define命令是C语言中的一个宏定义命令，它用来将一个标识符(宏名)定义为一个字符串，该标识符被称为宏名，被定义的字符串称为替换文本。程序编译之前，编译的时候所有的宏名都会被定义的字符串替换，这便是宏替换。理解宏定义的关键在于 “替换”。</p>
+<p>该命令有两种格式：一种是简单的宏定义，另一种是带参数的宏定义。</p>
+<ol>
+<li>简单的宏定义：<br>#define &lt;宏名&gt;　　&lt;字符串&gt;<br>例：</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.14</span></span><br><span class="line"><span class="keyword">float</span> pi2 = PI * <span class="number">2</span>;<span class="comment">//pi2 = 6.28</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>带参数的宏定义<br>#define &lt;宏名&gt; (&lt;参数表&gt;) &lt;宏体&gt;<br>例：</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AddOne(x) (x+1)</span></span><br><span class="line"><span class="keyword">float</span> pi2 = PI * <span class="number">2</span>;<span class="comment">//pi2 = 6.28</span></span><br><span class="line">pi2 = AddOne(pi2);<span class="comment">// pi2 = 7.28</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-宏替换发生的时机"><a href="#2-宏替换发生的时机" class="headerlink" title="2. 宏替换发生的时机"></a>2. 宏替换发生的时机</h2><p>源程序进行编译时，实际经过了预处理、编译、汇编和连接几个过程。其中预处理器产生编译器的输出，它实现以下的功能：</p>
+<ul>
+<li>文件包含. 可以把源程序中的#include 扩展为文件正文，即把包含的.h文件找到并展开到#include 所在处。</li>
+<li>条件编译. 预处理器根据#if和#ifdef等编译命令及其后的条件，将源程序中的某部分包含进来或排除在外，通常把排除在外的语句转换成空行。</li>
+<li>宏展开. 预处理器将源程序文件中出现的对宏的引用展开成相应的宏定义，即本文所说的#define的功能，由预处理器来完成。经过预处理器处理的源程序与之前的源程序有所有不同，在这个阶段所进行的工作只是纯粹的替换与展开，没有任何计算功能，所以在学习#define命令时只要能真正理解这一点，这样才不会对此命令引起误解并误用。</li>
+</ul>
+<p><strong>宏替换错误举例</strong></p>
+<p>只要严格遵守“直接替换”，就不会出现下面的问题</p>
+<p>比如下面的宏定义：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Square(x) x*x</span></span><br><span class="line"><span class="keyword">float</span> temp = Square(<span class="number">3</span>+<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>程序的本意可能是要计算6<em>6=36，但由于宏定义执行的是直接替换，本身并不做计算，因此实际的结果为 3+3</em>3+3=15, 想要避免这个问题，只需要修改如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Square(x) ((x)*(x))</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-宏定义的特点"><a href="#3-宏定义的特点" class="headerlink" title="3. 宏定义的特点"></a>3. 宏定义的特点</h2><ul>
+<li>宏名一般用大写，且末尾不加分号。</li>
+<li>宏定义的参数是无类型的，不做语法检查，不做表达式求解，只做替换。</li>
+<li>宏定义通常在文件的最开头，可以使用 <code>#undef 宏名</code> 命令终止宏定义的作用域。</li>
+<li>宏定义可以嵌套，但字符串” “中永远不包含宏。</li>
+<li>宏展开使源程序变长，函数调用不会； 宏展开不占运行时间，只占编译时间，函数调用占运行时间（分配内存、保留现场、值传递、返回值）。</li>
+<li>函数调用在编译后程序运行时进行，并且分配内存。宏替换在编译前进行，不分配内存。</li>
+<li>使用宏可提高程序的通用性和易读性，减少不一致性，减少输入错误和便于修改。例如：数组大小常用宏定义，常量pi常用宏定义。</li>
+</ul>
+<h2 id="4-define中的三个特殊符号：-，-，"><a href="#4-define中的三个特殊符号：-，-，" class="headerlink" title="4. define中的三个特殊符号：##，#，#@"></a>4. define中的三个特殊符号：##，#，#@</h2><ul>
+<li><code>#define Conn(x,y) x##y</code> x连接y，例如：int n = Conn(123,456); 结果就是n=123456; char* str = Conn(“asdf”, “adf”); 结果就是 str = “asdfadf”;</li>
+<li><code>#define ToChar(x) #@x</code> 给x加上单引号，结果返回是一个const char。例如：char a = ToChar(1);结果就是a=’1’;做个越界试验char a = ToChar(123);结果就错了;但是如果你的参数超过四个字符，编译器就给给你报错了！error C2015: too many characters in constant </li>
+<li><code>#define ToString(x) #x</code>  x加双引号,例如：char* str = ToString(123132);就成了str=”123132”;</li>
+</ul>
+<h2 id="5-常用宏定义"><a href="#5-常用宏定义" class="headerlink" title="5. 常用宏定义"></a>5. 常用宏定义</h2><ul>
+<li>防止一个头文件被重复包含</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> BODYDEF_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BODYDEF_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//头文件内容</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>得到指定地址上的一个字节或字</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MEM_B( x ) ( *( (byte *) (x) ) )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MEM_W( x ) ( *( (word *) (x) ) )</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> bTest = <span class="number">0x123456</span>;</span><br><span class="line"></span><br><span class="line">byte m = MEM_B((&amp;bTest));<span class="comment">/*m=0x56*/</span></span><br><span class="line"><span class="keyword">int</span> n = MEM_W((&amp;bTest));<span class="comment">/*n=0x3456*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>得到一个field在结构体(struct)中的偏移量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OFFSETOF( type, field ) ( (size_t) &amp;(( type *) 0)-&gt; field )</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>得到一个结构体中field所占用的字节数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FSIZ( type, field ) sizeof( ((type *) 0)-&gt;field )</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>得到一个变量的地址（word宽度）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> B_PTR( var ) ( (byte *) (void *) &amp;(var) )</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> W_PTR( var ) ( (word *) (void *) &amp;(var) )</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>将一个字母转换为大写</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define UPCASE( c ) ( ((c) &gt;= ''a'' &amp;&amp; (c) &lt;= ''z'') ? ((c) - 0x20) : (c) )</span><br></pre></td></tr></table></figure>
+<ul>
+<li>防止溢出的一个方法</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INC_SAT( val ) (val = ((val)+1 &gt; (val)) ? (val)+1 : (val))</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回数组元素的个数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ARR_SIZE( a ) ( sizeof( (a) ) / sizeof( (a[0]) ) )</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用一些宏跟踪调试</li>
+</ul>
+<p>ANSI标准说明了五个预定义的宏名。它们是：</p>
+<ul>
+<li><code>__LINE__</code>：在源代码中插入当前源代码行号；</li>
+<li><code>__FILE__</code>：在源文件中插入当前源文件名；</li>
+<li><code>__DATE__</code>：在源文件中插入当前的编译日期</li>
+<li><code>__TIME__</code>：在源文件中插入当前编译时间；</li>
+<li><code>__STDC__</code>：当要求程序严格遵循ANSI C标准时该标识被赋值为1；</li>
+<li><code>__cplusplus</code>：当编写C++程序时该标识符被定义</li>
+</ul>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p><a href="https://blog.csdn.net/shuzfan/article/details/52860664" target="_blank" rel="noopener">shuzfan</a></p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/14/cpp-define/">https://ddddfang.github.io/2019/02/14/cpp-define/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/14/cpp-define/">February 14th 2019, 11:20:51 am</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/14/cpp-define/">February 14th 2019, 12:51:22 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/13/cpp-sort/" title="cpp---sort">
+                    <div class="prevTitle">cpp---sort</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -449,6 +599,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-define基本用法"><span class="toc-number">1.</span> <span class="toc-text">1. define基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-宏替换发生的时机"><span class="toc-number">2.</span> <span class="toc-text">2. 宏替换发生的时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-宏定义的特点"><span class="toc-number">3.</span> <span class="toc-text">3. 宏定义的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-define中的三个特殊符号：-，-，"><span class="toc-number">4.</span> <span class="toc-text">4. define中的三个特殊符号：##，#，#@</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-常用宏定义"><span class="toc-number">5.</span> <span class="toc-text">5. 常用宏定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ref"><span class="toc-number">5.1.</span> <span class="toc-text">ref</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1218,6 +1386,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
