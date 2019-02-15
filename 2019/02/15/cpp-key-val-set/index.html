@@ -427,10 +427,8 @@ height:50vh;
 </li>
 <li>set的迭代器是const的</li>
 </ol>
-<ul>
-<li>为何map和set的插入删除效率比用其他序列容器高？   因为内部采用红黑树/哈希表, 不涉及内存的拷贝和移动等操作</li>
-<li>为何每次insert之后，以前保存的iterator不会失效？   iterator 相当于指向节点的指针，内存没有变，指向内存的指针不会失效(当然被删除的那个元素本身已经失效了)。相对于vector，每一次删除和插入，指针都有可能失效。因为为了保证内部数据的连续存放，vector管理的那块内存可能被扩容(伴随着释放和重新分配)。特别在和find等算法在一起使用时,牢记不要使用过期的iterator。</li>
-</ul>
+<p>map和set的插入删除效率比用其他序列容器高？   因为内部采用红黑树/哈希表, 不涉及内存的拷贝和移动等操作</p>
+<p>为何每次insert之后，以前保存的iterator不会失效？   iterator 相当于指向节点的指针，内存没有变，指向内存的指针不会失效(当然被删除的那个元素本身已经失效了)。相对于vector，每一次删除和插入，指针都有可能失效。因为为了保证内部数据的连续存放，vector管理的那块内存可能被扩容(伴随着释放和重新分配)。特别在和find等算法在一起使用时,牢记不要使用过期的iterator。</p>
 <h2 id="2-一些接口"><a href="#2-一些接口" class="headerlink" title="2. 一些接口"></a>2. 一些接口</h2><table>
 <thead>
 <tr>
@@ -535,7 +533,7 @@ height:50vh;
             <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
             </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">https://ddddfang.github.io/2019/02/15/cpp-key-val-set/</a>
             </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">February 15th 2019, 3:47:23 pm</a>
-            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">February 15th 2019, 4:22:11 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">February 15th 2019, 4:27:11 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
