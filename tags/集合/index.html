@@ -346,277 +346,30 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/sed/">
+        <a class="abstract-title" href="/2019/02/14/cpp-set/">
             
-                <span>sed</span>
+                <span>cpp---set</span>
         </a>
         <div class="abstract-content">
-            1. sed替换的基本语法为:
-sed &#39;s/原字符串/替换字符串/&#39; 单引号里面,s表示替换,三根斜线中间是替换的样式,特殊字符需要使用反斜线”\”进行转义。
-
-2. 单引号” ‘ ’”是没有办法用反斜线”\”转义的,这时候只要把命令中的单引号改为双引号就行了,格式如下：
-sed &quot;s/原字符串包含&#39;/替换字符串包含&#39;/&quot; # 要处理的字符包含单引号
-
-3. 命令中的三根斜线分隔符可以换成别的符号,有时候替换目录字符串的时候有较多斜线，这个时候换成其它的分割符是较为方便,只需要紧跟s定义即可。
-sed &#39;s?原字符串?替换字符...
+            
+顺序容器包括vector、deque、list、forward_list、array、string，顺序容器都提供了快速(顺序)访问元素的能力, vector封装数组，list封装了链表
+关联容器包括set、map, map存储的元素是键值对(c++中称其为 pair ).set中每个元素则只包含key
+set包含以下几种:
+set&lt;T&gt; 容器保存 T 类型的对象，保存的对象不重复。元素有序，默认用 less 对象比较。可以用相等、不相等来判断对象是否相同。(内部采用红黑树实现) 需要 #include &lt;set&gt;
+multiSet&lt;T&gt; 与set&...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/14</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/shell/">
-            
-                <span>shell</span>
-        </a>
-        <div class="abstract-content">
-            1.测试某个文件是否存在，类似的，-c是否是一个字符文件，-z该变量是否有值，-d是否是一个目录 -r是否可读123456tar_dir=`pwd`/123      #这其实就是一个字符串的连接，在shell里面将执行命令作为字符串返回，只要放在 `` 里if [ -f $tar_dir ];then    echo "tar exist"   else    mkdir -p $tar_dirfi
-2.遍历当前文件夹下所有文件12345678for file in `ls -l |awk '&#123;print $9&#125;'`   #这里其实file是新建的do    if ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/22/gdb/">
-            
-                <span>gdb</span>
-        </a>
-        <div class="abstract-content">
-            1. gdb基本使用要编写debug版本才可以使用gdb跟踪，即使用gcc编译的时候应该加上 -g -O0 -Wall 选项，而不是-O2
-
-
-
-命令
-说明
-
-
-
-
-gdb audiodrvtest
-开始使用gdb调试程序audiodrvtest
-
-
-b zx_audio_driver.c: 353
-在zx_audio_driver.c文件的353行加一个断点
-
-
-b ZX_AudioDrvDecClose
-在ZX_AudioDrvDecClose函数开始的地方也加上一个断点
-
-
-b if a=100
-条件断点，当变量a为100的时候会停住
-
-
-info b
-查看断点信息
-
-
-delet...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gdb">gdb</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/git/">
-            
-                <span>git</span>
-        </a>
-        <div class="abstract-content">
-            1.config git账户123git config --global user.email fridayfang@zhaoxin.comgit config --global user.name fridayfanggit config -e    查看git 的一些配置信息
-以后这个将作为git commit 的签名，upload还需要ssh的public key (直接 ssh-keygen)，类似github的上传，添加collaborator需要对方的邮箱一样
-2.git仓库的创建
-git init 在当前目录下初始化一个git仓库
-git init  --bare 初始化一...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/11/docker-basic/">
-            
-                <span>docker-basic</span>
-        </a>
-        <div class="abstract-content">
-            docker基础
-docekr 相当于超轻量级虚拟机,大部分代码应该属于隔离而非通信(因为docker最终都是调用的真是机器*nix)
-ubuntu/centos/*nix 等os应该是docker提供的最小image了,其中也并非os的实现,而是docker的沙箱/壳实现
-在沙箱中apt-get install 会体现到沙箱提供的文件系统(隔离code)等,所以主机看不到沙箱里面,沙箱也看不到外面
-其他 image 应该是沙箱+应用的集合,从虚拟机观点看,每个应用都附着在其os沙箱上,多个应用合作必然会启动多个os, 但这个os反映到真实机器上就是我们的宿主机一个而已
-
-1.ubunt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/03/ffmpeg学习资料/">
-            
-                <span>ffmpeg学习资料</span>
-        </a>
-        <div class="abstract-content">
-            
-以下下是 ffmpeg 学习资料和链接
-维基百科
-csdn1,学习路线图不错
-csdn2,从0开始学习音视频,不过不够开源
-csdn3,一个qtplayer的实现
-ffmpeg命令用例
-有许多流媒体资料
-雷霄骅
-一个讲解ffmpeg的ppt
-jhuster
-jhuster
-jhuster
-又是一个资料库
-ffmpeg再学习
-又是一个大神
-android直播apk
-MPEG Headers Quick Reference
-ffmpeg notes
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ffmpeg">ffmpeg</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/03/hexo-blog/">
-            
-                <span>hexo-blog</span>
-        </a>
-        <div class="abstract-content">
-            github 结合 hexo 可以搭建自己的博客,具体步骤如下.
-1. 安装依赖安装node.js12curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash   //https://github.com/creationix/nvmwget -qO- https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh
-(重启terminal)12nvm install stablenode -v
-安装node插件(he...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="集合">集合</a>
     
 </div>
             
@@ -624,10 +377,6 @@ ffmpeg notes
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/3/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
     
 </main>
             <!-- profile -->

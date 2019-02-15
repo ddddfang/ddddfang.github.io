@@ -359,6 +359,72 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/29/makefile2/">
+            
+                <span>makefile2</span>
+        </a>
+        <div class="abstract-content">
+            DEMO 1configurate脚本，就是一段bash脚本
+123456789101112131415161718192021222324252627282930313233343536373839# linux系统除了提供位置参数还提供内置参数，内置参数如下：　# $0 ----脚本名称# $# ----传递给程序的总的参数数目 　# $? ----上一个代码或者shell程序在shell中退出的情况，如果正常退出则返回0，反之为非0值。 　　# $* ----传递给程序的所有参数组成的字符串。（尽量使用$@并将其用双引号括起来） 　　# $@----以&quot;参数1&quot;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="static and dynamic library">static and dynamic library</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/01/28/makefile/">
+            
+                <span>makefile</span>
+        </a>
+        <div class="abstract-content">
+            1. gnu make in detail for deginners&lt;以下为gnu make in detail for beginners的删减版,完整的在这里&gt;
+Have you ever peeked into the source code of any of the applications you run every day? Ever used make install to install some application? You will see make in most projects. It enables developers to easily...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/28/perforce/">
             
                 <span>perforce</span>
@@ -629,74 +695,6 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
         <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/sed/">
-            
-                <span>sed</span>
-        </a>
-        <div class="abstract-content">
-            1. sed替换的基本语法为:
-sed &#39;s/原字符串/替换字符串/&#39; 单引号里面,s表示替换,三根斜线中间是替换的样式,特殊字符需要使用反斜线”\”进行转义。
-
-2. 单引号” ‘ ’”是没有办法用反斜线”\”转义的,这时候只要把命令中的单引号改为双引号就行了,格式如下：
-sed &quot;s/原字符串包含&#39;/替换字符串包含&#39;/&quot; # 要处理的字符包含单引号
-
-3. 命令中的三根斜线分隔符可以换成别的符号,有时候替换目录字符串的时候有较多斜线，这个时候换成其它的分割符是较为方便,只需要紧跟s定义即可。
-sed &#39;s?原字符串?替换字符...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/shell/">
-            
-                <span>shell</span>
-        </a>
-        <div class="abstract-content">
-            1.测试某个文件是否存在，类似的，-c是否是一个字符文件，-z该变量是否有值，-d是否是一个目录 -r是否可读123456tar_dir=`pwd`/123      #这其实就是一个字符串的连接，在shell里面将执行命令作为字符串返回，只要放在 `` 里if [ -f $tar_dir ];then    echo "tar exist"   else    mkdir -p $tar_dirfi
-2.遍历当前文件夹下所有文件12345678for file in `ls -l |awk '&#123;print $9&#125;'`   #这里其实file是新建的do    if ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
     
 </div>
             
@@ -1326,9 +1324,53 @@ sed &#39;s?原字符串?替换字符...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 35
+        Total : 37
         </div>
         <!-- search  -->
         
@@ -1341,6 +1383,16 @@ sed &#39;s?原字符串?替换字符...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href="/2019/02/15/caffe-ubuntu14-gpu/">caffe-ubuntu14-gpu</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href="/2019/02/14/cpp-set/">cpp---set</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1522,21 +1574,21 @@ sed &#39;s?原字符串?替换字符...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
+        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
-        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
+        <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
-        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
-    
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="集合"><span class="iconfont-archer">&#xe606;</span>集合</span>
+    
+        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
     
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
-    
-        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -1544,13 +1596,15 @@ sed &#39;s?原字符串?替换字符...
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
+        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
+    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1558,13 +1612,11 @@ sed &#39;s?原字符串?替换字符...
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
-    
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
-        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -1573,6 +1625,8 @@ sed &#39;s?原字符串?替换字符...
         <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
@@ -1617,13 +1671,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
-    
         <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
-        <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+        <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
         <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
+    
+        <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
