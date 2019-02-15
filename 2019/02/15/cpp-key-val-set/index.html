@@ -22,7 +22,7 @@
     <meta name="description" content="nothing to be told">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ddddfang&#39;s Blog</title>
+    <title>cpp---key-val-set · ddddfang&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">ddddfang&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">cpp---key-val-set</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">ddddfang's Blog.</a>
 </header>
@@ -220,24 +231,76 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            cpp---key-val-set
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="键值对集合">键值对集合</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/02/15</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,46 +401,172 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/14/cpp-set/">
-            
-                <span>cpp---set</span>
-        </a>
-        <div class="abstract-content">
-            
-顺序容器包括vector、deque、list、forward_list、array、string，顺序容器都提供了快速(顺序)访问元素的能力, vector封装数组，list封装了链表
-关联容器包括set、map, map存储的元素是键值对(c++中称其为 pair ).set中每个元素则只包含key
-set包含以下几种:
-set&lt;T&gt; 容器保存 T 类型的对象，保存的对象不重复。元素有序，默认用 less 对象比较。可以用相等、不相等来判断对象是否相同。(内部采用红黑树实现) 需要 #include &lt;set&gt;
-multiSet&lt;T&gt; 与set&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="集合">集合</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>&lt;参看 c++primer p407,ch11&gt;</p>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><ol>
+<li>顺序容器包括vector、deque、list、forward_list、array、string，顺序容器都提供了快速(顺序)访问元素的能力, vector封装数组，list封装了链表</li>
+<li>关联容器包括set、map, set存储的是key类型的元素, map存储的元素是{key,val}组成的pair类型,<ul>
+<li>创建一个pair可以 <code>pair&lt;T1,T2&gt; p;</code> 或者<code>pair&lt;T1,T2&gt; p(v1,v2);</code> 或 <code>pair&lt;T1,T2&gt; p={v1,v2};</code> 或 <code>make_pair(v1,v2)</code></li>
+<li>访问一个pair则 <code>p.first</code> 和 <code>p.second</code></li>
+</ul>
+</li>
+<li>set包含以下几种:<ul>
+<li><code>set&lt;T&gt;</code> 容器保存 <code>T</code> 类型的对象，保存的对象不重复。元素有序，默认用 less<t> 对象比较。可以用相等、不相等来判断对象是否相同。(内部采用<strong>红黑树</strong>实现) 需要 <code>#include &lt;set&gt;</code></t></li>
+<li><code>multiSet&lt;T&gt;</code> 与<code>set&lt;T&gt;</code>区别在他可以保存重复的对象。<code>#include &lt;multiset&gt;</code></li>
+<li><code>unorderd_set&lt;T&gt;</code> 容器保存 <code>T</code> 类型的对象，保存的对象不重复。元素在容器中的位置由元素的哈希值决定。默认用 equal_to<t> 判断元素是否相等。(内部采用<strong>hash表</strong>实现),需要 <code>include &lt;unorderd_set&gt;</code></t></li>
+<li><code>unordered_multiset&lt;T&gt;</code> 与<code>unorderd_set&lt;T&gt;</code>区别在它可以保存重复的对象。<code>include &lt;unordered_multiset&gt;</code></li>
+</ul>
+</li>
+<li>map包含以下几种<ul>
+<li><code>map&lt;Tkey,Tval&gt;</code> 键值对集合(红黑树实现), 支持[ ]操作(set不支持因为没有获取val的意义)</li>
+<li><code>multimap&lt;Tkey,Tval&gt;</code> key可以重复的键值对集合(红黑树实现),(不支持[ ] 操作因为可能返回多个val)</li>
+<li><code>unordered_map&lt;Tkey,Tval&gt;</code> 键值对集合(hash表 实现),支持[ ]操作</li>
+<li><code>unordered_multimap&lt;Tkey,Tval&gt;</code> key可以重复的键值对集合(hash表 实现)</li>
+</ul>
+</li>
+<li>set的迭代器是const的</li>
+</ol>
+<ul>
+<li>为何map和set的插入删除效率比用其他序列容器高？   因为内部采用红黑树/哈希表, 不涉及内存的拷贝和移动等操作</li>
+<li>为何每次insert之后，以前保存的iterator不会失效？   iterator 相当于指向节点的指针，内存没有变，指向内存的指针不会失效(当然被删除的那个元素本身已经失效了)。相对于vector，每一次删除和插入，指针都有可能失效。因为为了保证内部数据的连续存放，vector管理的那块内存可能被扩容(伴随着释放和重新分配)。特别在和find等算法在一起使用时,牢记不要使用过期的iterator。</li>
+</ul>
+<h2 id="2-一些接口"><a href="#2-一些接口" class="headerlink" title="2. 一些接口"></a>2. 一些接口</h2><table>
+<thead>
+<tr>
+<th>成员函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin()</td>
+<td>返回容器的第一个元素,map是pair类型,set则就是key的类型</td>
+</tr>
+<tr>
+<td>end()</td>
+<td>返回容器的最后一个元素</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>删除容器中的所有的元素</td>
+</tr>
+<tr>
+<td>empty()</td>
+<td>判断容器是否为空</td>
+</tr>
+<tr>
+<td>max_size()</td>
+<td>返回容器可能包含的元素最大个数</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>返回当前容器中的元素个数</td>
+</tr>
+<tr>
+<td>rbegin()</td>
+<td>返回的值和end()相同</td>
+</tr>
+<tr>
+<td>rend()</td>
+<td>返回的值和rbegin()相同</td>
+</tr>
+<tr>
+<td>———————</td>
+<td>—————————————————————————————————-</td>
+</tr>
+<tr>
+<td>erase(iterator)</td>
+<td>删除iterator指向的元素</td>
+</tr>
+<tr>
+<td>erase(first,second)</td>
+<td>删除iterator first和second之间的元素</td>
+</tr>
+<tr>
+<td>erase(k)</td>
+<td>删除键值key=k的元素</td>
+</tr>
+<tr>
+<td>find(k)</td>
+<td>返回key=k对应的iterator，如果没找到则返回end()</td>
+</tr>
+<tr>
+<td>insert(k)</td>
+<td>将k插入到键值对集合中，返回值是pair&lt;iterator,bool&gt;，bool标志着插入是否成功，插入成功iterator代表插入的元素，若key=k的元素已经存在，则iterator表示已经存在的那个元素</td>
+</tr>
+<tr>
+<td>insert(first,second)</td>
+<td>将iteratot first到second之间的元素插入到set中，返回值是void.</td>
+</tr>
+<tr>
+<td>———————</td>
+<td>—————————————————————————————————-</td>
+</tr>
+<tr>
+<td>lower_bound(key_value)</td>
+<td>返回第一个大于等于key_value的iterator</td>
+</tr>
+<tr>
+<td>upper_bound(key_value)</td>
+<td>返回最后一个大于key_value的iterator</td>
+</tr>
+<tr>
+<td>equal_range()</td>
+<td>返回一对iterator，表示关键字等于</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>用来查找set中某个某个键值出现的次数(对于key可重复的map/set常用)</td>
+</tr>
+</tbody>
+</table>
+<p>此外 unsorted_map unsorted_set还提供了一些和bucket桶相关的api</p>
+<h2 id="3-demo"><a href="#3-demo" class="headerlink" title="3. demo"></a>3. demo</h2><p>统计word</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">size_t</span>&gt; word_cnt;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; exclude = &#123;<span class="string">"and"</span>,<span class="string">"And"</span>,<span class="string">"or"</span>,<span class="string">"Or"</span>,<span class="string">"the"</span>,<span class="string">"The"</span>&#125;;    <span class="comment">//在集合中的string不进行统计,默认 set&lt;string, less&lt;string&gt;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//统计</span></span><br><span class="line"><span class="built_in">string</span> word;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;word)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(exclude.find(word) == exclude.end())    <span class="comment">//word 不在集合中</span></span><br><span class="line">    &#123;</span><br><span class="line">        ++word_cnt[word];    <span class="comment">//调用map的 operator[]/at() 成员函数执行下标操作, 会: 读取map中元素,并进行++操作,写入时若没有key=word的元素则插入</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//遍历打印</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;w : word_cnt)    <span class="comment">//使用迭代器遍历map, w实际就是一个pair类型</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"key="</span>&lt;&lt;w.first&lt;&lt;<span class="string">",val="</span>&lt;&lt;w.second&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>与上面等价的版本:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">size_t</span>&gt; word_cnt;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; exclude = &#123;<span class="string">"and"</span>,<span class="string">"And"</span>,<span class="string">"or"</span>,<span class="string">"Or"</span>,<span class="string">"the"</span>,<span class="string">"The"</span>&#125;;    <span class="comment">//在集合中的string不进行统计</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//统计</span></span><br><span class="line"><span class="built_in">string</span> word;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;word)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(exclude.find(word) == exclude.end())    <span class="comment">//若 word 不在集合中</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//if(word_cnt.find(word) == word_cnt.end())</span></span><br><span class="line">        <span class="comment">//&#123;</span></span><br><span class="line">        <span class="comment">//    cout&lt;&lt;word&lt;&lt;" is not in the map. "&lt;&lt;endl;</span></span><br><span class="line">        <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//&#123;word,1&#125;构造一个pair, ret 是 pair&lt;map&lt;string,size_t&gt;::iterator, bool&gt; 类型</span></span><br><span class="line">        <span class="comment">//若pair.second为false,代表key为word的元素已经存在, pair.first 就是那个已经存在的元素(一个pair)</span></span><br><span class="line">        <span class="comment">//若pair.second为true,代表key为word的元素原来不存在(现在已经插入了)</span></span><br><span class="line">        <span class="keyword">auto</span> ret = word_cnt.insert(&#123;word,<span class="number">1</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span>(!ret.second)</span><br><span class="line">            ++ret.first-&gt;second;    <span class="comment">//将已经存在的pair的val值++</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//遍历打印</span></span><br><span class="line"><span class="keyword">auto</span> map_it = word_cnt.cbegin();    <span class="comment">//cbegin()中的c是const的意思</span></span><br><span class="line"><span class="keyword">while</span>(map_it != word_cnt.cend())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"key="</span>&lt;&lt;map_it-&gt;first&lt;&lt;<span class="string">",val="</span>&lt;&lt;map_it-&gt;second&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    map_it++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a[] = &#123;1,2,3&#125;;</span><br><span class="line">    set&lt;int&gt; s(a,a+3);</span><br><span class="line">    set&lt;int&gt;::iterator iter;</span><br><span class="line">    if((iter = s.find(2)) != s.end())</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;*iter&lt;&lt;endl;//输出为2</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
+            </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">https://ddddfang.github.io/2019/02/15/cpp-key-val-set/</a>
+            </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">February 15th 2019, 3:47:23 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/15/cpp-key-val-set/">February 15th 2019, 4:22:11 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/15/caffe-ubuntu14-gpu/" title="caffe-ubuntu14-gpu">
+                    <div class="prevTitle">caffe-ubuntu14-gpu</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -456,6 +645,24 @@ multiSet&lt;T&gt; 与set&...
     </div>
     <!-- toc -->
     
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-概述"><span class="toc-number">1.</span> <span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-一些接口"><span class="toc-number">2.</span> <span class="toc-text">2. 一些接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-demo"><span class="toc-number">3.</span> <span class="toc-text">3. demo</span></a></li></ol>
+    </div>
+    
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
@@ -466,6 +673,12 @@ multiSet&lt;T&gt; 与set&...
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
     
     
     
@@ -972,7 +1185,7 @@ multiSet&lt;T&gt; 与set&...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href="/2019/02/14/cpp-set/">cpp---set</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href="/2019/02/15/cpp-key-val-set/">cpp---key-val-set</a>
         </li>
     
     
@@ -1155,21 +1368,23 @@ multiSet&lt;T&gt; 与set&...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
-    
         <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
+    
+        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
     
-        <span class="sidebar-tag-name" data-tags="集合"><span class="iconfont-archer">&#xe606;</span>集合</span>
-    
-        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
-    
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
+    
+        <span class="sidebar-tag-name" data-tags="键值对集合"><span class="iconfont-archer">&#xe606;</span>键值对集合</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -1177,15 +1392,13 @@ multiSet&lt;T&gt; 与set&...
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
-        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
-    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
-    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1193,11 +1406,13 @@ multiSet&lt;T&gt; 与set&...
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
-    
         <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
+        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+    
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -1206,8 +1421,6 @@ multiSet&lt;T&gt; 与set&...
         <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
-    
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
@@ -1252,13 +1465,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
-    
         <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
-        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
@@ -1296,6 +1509,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

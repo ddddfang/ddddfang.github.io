@@ -346,22 +346,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/02/14/cpp-set/">
+        <a class="abstract-title" href="/2019/02/15/cpp-key-val-set/">
             
-                <span>cpp---set</span>
+                <span>cpp---key-val-set</span>
         </a>
         <div class="abstract-content">
-            
+            &lt;参看 c++primer p407,ch11&gt;
+1. 概述
 顺序容器包括vector、deque、list、forward_list、array、string，顺序容器都提供了快速(顺序)访问元素的能力, vector封装数组，list封装了链表
-关联容器包括set、map, map存储的元素是键值对(c++中称其为 pair ).set中每个元素则只包含key
-set包含以下几种:
-set&lt;T&gt; 容器保存 T 类型的对象，保存的对象不重复。元素有序，默认用 less 对象比较。可以用相等、不相等来判断对象是否相同。(内部采用红黑树实现) 需要 #include &lt;set&gt;
-multiSet&lt;T&gt; 与set&...
+关联容器包括set、map, set存储的是key类型的元素, map存储的元素是{key,val}组成的pair类型,
+创建一个pair可以 pair&lt;T1,T2&gt; p; 或者pair&lt;T1,T2&gt; p(v1,v2); 或 pair&lt;T1,T2&gt; p={v1,v2}; 或 make_pair(...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/14</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/15</span>
             </div>
             <!-- tags  -->
             
@@ -369,7 +368,7 @@ multiSet&lt;T&gt; 与set&...
     
         <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="集合">集合</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="键值对集合">键值对集合</a>
     
 </div>
             
@@ -1060,6 +1059,12 @@ stable_partition
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 37
@@ -1083,7 +1088,7 @@ stable_partition
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/14</span><a class="archive-post-title" href="/2019/02/14/cpp-set/">cpp---set</a>
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href="/2019/02/15/cpp-key-val-set/">cpp---key-val-set</a>
         </li>
     
     
@@ -1266,21 +1271,23 @@ stable_partition
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
-    
         <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
+    
+        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
+    
+        <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
         <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
     
-        <span class="sidebar-tag-name" data-tags="集合"><span class="iconfont-archer">&#xe606;</span>集合</span>
-    
-        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
-    
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
+    
+        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
+    
+        <span class="sidebar-tag-name" data-tags="键值对集合"><span class="iconfont-archer">&#xe606;</span>键值对集合</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -1288,15 +1295,13 @@ stable_partition
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
-        <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
-    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
-    
         <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1304,11 +1309,13 @@ stable_partition
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
-    
         <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
+        <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
+    
         <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="draw.io"><span class="iconfont-archer">&#xe606;</span>draw.io</span>
     
@@ -1317,8 +1324,6 @@ stable_partition
         <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
-    
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
@@ -1363,13 +1368,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
-    
         <span class="sidebar-category-name" data-categories="algorithm-and-data-struct"><span class="iconfont-archer">&#xe60a;</span>algorithm-and-data-struct</span>
     
-        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
+        <span class="sidebar-category-name" data-categories="caffe"><span class="iconfont-archer">&#xe60a;</span>caffe</span>
     
         <span class="sidebar-category-name" data-categories="common-misc"><span class="iconfont-archer">&#xe60a;</span>common-misc</span>
+    
+        <span class="sidebar-category-name" data-categories="cpp"><span class="iconfont-archer">&#xe60a;</span>cpp</span>
     
         <span class="sidebar-category-name" data-categories="linux-daily"><span class="iconfont-archer">&#xe60a;</span>linux-daily</span>
     
