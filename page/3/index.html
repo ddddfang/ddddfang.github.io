@@ -359,6 +359,40 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/01/30/docker-file/">
+            
+                <span>docker-file</span>
+        </a>
+        <div class="abstract-content">
+            参看《第一本dockers书》p80
+docker之dockerfile实践v1先查看下本地的镜像，选一个作为base image：
+123[root@docker ~]# docker imagesREPOSITORY       TAG          IMAGE ID             CREATED          SIZEcentos           latest       196e0ce0c9fb    6 weeks ago      197MB
+接下来开始编写Dockerfile文件（注意Dockerfile的D需要大写），这里以编译nginx提供web服...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/01/29/makefile2/">
             
                 <span>makefile2</span>
@@ -647,41 +681,6 @@ fdisk -l    （这个命令可以将还没挂载的block也列出来，fdisk /de
             1. 搞openwrt用到puppy linux时，直接将系统镜像写入到硬盘（重新启动从硬盘加载就变成 openwrt 对应的操作系统了）1dd if=openwrt-x86-generic-combined-ext2.img of=/dev/sda
 2.将bin文件作为镜像写入软盘 (于渊：所谓镜像，可理解为原始设备的逐字节复制。如软盘的第m个字节对应文件的第m个字节)12nasm boot.asm -o boot.bindd if=boot.bin of=/dev/fd0 bs=512 count=1 conv=notrunc
 3.小测试12345dd if=/dev/zero of...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux command">linux command</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/xxd/">
-            
-                <span>xxd</span>
-        </a>
-        <div class="abstract-content">
-            xxd: 二进制显示和处理文件工具,cat: 以文本方式ASCII显示文件
-xxd -s 0x30 file skip file 的前 0x30 bytes后显示file
-xxd -s -0x30 file skip file 的 (size-0x30) bytes后显示file（其实就是显示file的最后 0x30 bytes）
-xxd -s 0x28 -l 120 -c 12 file skip file的0x28bytes后，显示 len=120 bytes的内容，每行显示12 bytes(column=12)
-xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1374,9 +1373,22 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1389,6 +1401,11 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span><a class="archive-post-title" href="/2019/02/18/cpp-sequential-container/">cpp---sequential-container</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1596,7 +1613,7 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
     
         <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
     
-        <span class="sidebar-tag-name" data-tags="键值对集合"><span class="iconfont-archer">&#xe606;</span>键值对集合</span>
+        <span class="sidebar-tag-name" data-tags="顺序容器"><span class="iconfont-archer">&#xe606;</span>顺序容器</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -1608,9 +1625,9 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1633,6 +1650,8 @@ xxd -s 0x28 -l 120 -c 12 -a -g 1 fi...
         <span class="sidebar-tag-name" data-tags="vscode"><span class="iconfont-archer">&#xe606;</span>vscode</span>
     
         <span class="sidebar-tag-name" data-tags="office2016 密钥"><span class="iconfont-archer">&#xe606;</span>office2016 密钥</span>
+    
+        <span class="sidebar-tag-name" data-tags="键值对集合"><span class="iconfont-archer">&#xe606;</span>键值对集合</span>
     
         <span class="sidebar-tag-name" data-tags="链表"><span class="iconfont-archer">&#xe606;</span>链表</span>
     
