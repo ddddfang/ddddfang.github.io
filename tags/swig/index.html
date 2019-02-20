@@ -78,6 +78,8 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            ddddfang's Blog.
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                it's better to burn out than to fade away
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -359,335 +346,27 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/31/bit-set/">
+        <a class="abstract-title" href="/2019/02/19/swig/">
             
-                <span>bit-set</span>
+                <span>swig</span>
         </a>
         <div class="abstract-content">
-            如何实现简单的位数组(bit array) ref以下摘自 How can I implement sets or arrays of bits？，仅使用几个简单的宏就实现了一个基本的位数组（bitset，又名 bitmap）
-1234567891011121314151617181920#include &lt;limits.h&gt;        /* for CHAR_BIT *///CHAR_BIT is the number of bits in char,almost all architectures//use 8 bits per byte but it is not ...
+            swig可以将c/c++编写的code生成其他语言(python / js / java / c# / perl / lisp / ….)的接口,本质是一个代码生成工具.
+swig install
+123456789101112$ sudo apt-get install automake$ sudo apt-get install flex bison$ git clone https://github.com/swig/swig.git$ cd swig$ ./autogen.sh$ ./configure --prefix=/some/directory$ make$ sudo m...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/31</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/19</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="bitmap">bitmap</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="swig">swig</a>
     
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/31/gitbook/">
-            
-                <span>gitbook</span>
-        </a>
-        <div class="abstract-content">
-            https://blog.csdn.net/lu_embedded/article/details/81100704
-http://gitbook.zhangjikai.com/themes.html
-https://www.jianshu.com/p/421cc442f06c
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitbook">gitbook</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/rb-tree/">
-            
-                <span>rb-tree</span>
-        </a>
-        <div class="abstract-content">
-            1. 介绍Key-value 键值对貌似有用红黑书实现的（或者使用hash表实现，二者各有优劣）,关于红黑树的详细介绍可以参看 http://blog.csdn.net/v_JULY_v/article/details/6105630
-红黑树必须满足的规则：
-
-所有节点都有颜色，要么红色，要么黑色
-根节点是黑色，所有叶子节点也是黑色
-叶子节点中不包含数据
-非叶子节点都有2个子节点
-如果一个节点是红色，那么它的父节点和子节点都是黑色的（黑节点无此要求！）
-从任何一个节点开始，到其下叶子节点的路径中都包含相同数目的黑节点
-
-
-根据规则,可以知道:
-
-红黑树中最长的路径就是红黑交替的路径，最短...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="红黑树">红黑树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/list/">
-            
-                <span>list</span>
-        </a>
-        <div class="abstract-content">
-            list.h这个list.h其实是linux内核中链表实现的精简版(只需要一个头文件)，linux提供的这套接口更像是构造list的零部件。用户可以选择直接用它定制化自己的 list型数据结构，甚至可以实现一个更为 高层次的、通用的 list接口（如下面的clist）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="链表">链表</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/sort-related/">
-            
-                <span>sort-related</span>
-        </a>
-        <div class="abstract-content">
-            快速排序中的核心函数123456789101112131415161718192021222324252627int Partition(int a[], int start, int end) //返回调整后基准数的位置(也就是它在最终排序数组中的位置)&#123;    int i = start, j = end;    int x = a[i]; //a[i]就是第一个坑，这里可以先安排一个a[i] &lt;---&gt; a[randint(start,end)]    while (i &lt; j)    &#123;        // 坑在左边，那就先从右向左找小于x的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="第k小的数">第k小的数</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/docker-apps/">
-            
-                <span>docker-apps</span>
-        </a>
-        <div class="abstract-content">
-            搭建一个个人博客：https://www.jianshu.com/p/3c6c9d964cb4docker run –name mysql-01 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysqldocker run –name wp -p 80:80 –link mysql-01:mysql -d wordpress然后 ifconfig 查看下本机的ip（或者直接用127.0.0.1也可），然后打开浏览器输入 :80 即可看到wordpress的安装界面，设置完成用户名和密码即可进入posts–&gt;add new 就是发布新文章（因为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
-            
-                <span>printf-可变参数</span>
-        </a>
-        <div class="abstract-content">
-            12345typedef char *va_list;   //va_list就是个普通的指向char类型的指针而已#define _INTSIZEOF(n)   (  (sizeof(n)+sizeof(int)-1)&amp; ~(sizeof(int)-1)  ) //这是获取某个类型的长度，并按照int长度为边界对齐，不足4bytes补足，因为栈宽度为4bytes#define va_start(ap,v)  (ap=(va_list)&amp;v + _INTSIZEOF(v)) //这就是使ap指向v的以int长度为边界的后一个位置#define va_arg(ap, typ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="printf 可变参数">printf 可变参数</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/cmake/">
-            
-                <span>cmake</span>
-        </a>
-        <div class="abstract-content">
-            #Cmake自动构建工具，在当前目录下创建 CmakeLists.txt 和 build 目录
-#cd build 目录后执行 cmake .. （../ 下必须存在一个名为 CmakeLists.txt 的文件）即可
-#定义工程名字 HELLO，会自动隐式创建两个变量 HELLO_BINARY_DIR 和  HELLO_SOURCE_DIRPROJECT (HELLO)SET(SRC_LIST aes-cmac.c TI_aes_128.c)
-#XXX_BINARY_DIR 一般就是 cmake 执行时候的目录。变量的引用必须 ${ }（IF 语句是唯一的例外）MESSAGE(STAT...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="makefile">makefile</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/caffe/">
-            
-                <span>caffe</span>
-        </a>
-        <div class="abstract-content">
-            关于 caffe的单例模式Caffe的common.hpp文件中
-123456789class Caffe &#123;public:    ~Caffe();    static Caffe&amp; Get(); //通过Get() new Caffe()返回单实例(注意new 只可以由本类的成员函数调用了,因为构造函数是私有的)     //private:     Caffe(); //这里这样是防止其他类 new Caffe     //&#125;;
-然后在cpp实现中：
-12345678static boost::thread_specific_ptr&lt;Caffe&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="caffe">caffe</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="单例模式">单例模式</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/杂谈/">
-            
-                <span>杂谈</span>
-        </a>
-        <div class="abstract-content">
-            关于画图
-uml类图, startUML 看起来还不错,但是我想画的并不是标准的类图,而是随心所欲的数据结构图, https://www.cnblogs.com/shindo/p/5579191.html
-process on,在线做图,傻瓜式,但是功能少
-draw.io,目前发现的最适合我的画图软件,支持和github帐号绑定,从github sync非常赞,创建的时候选择 软件（程序员）, 这里可以下载draw.io的离线版本. linux的离线版本可能有点问题，使用minphone的方法，先将star-uml的tar.gz包解压，然后将window下exe安装后的C:\Progra...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="draw.io">draw.io</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="markdown">markdown</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vscode">vscode</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="office2016 密钥">office2016 密钥</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="python c">python c</a>
     
 </div>
             
@@ -696,102 +375,8 @@ draw.io,目前发现的最适合我的画图软件,支持和github帐号绑定,�
     
     <!-- paginator  -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">NEXT &#62;</a>
-    </nav>
-    
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/assets/img/head2.jpg">
-    <div class="profile-name">ddddfang</div>
-    
-    <div class="profile-signature">
-        nothing to be told
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:17621308623@163.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="https://github.com/ddddfang" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="//www.baidu.com" target="_black">baidu</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href="//www.ruanyifeng.com/blog/" target="_black">ruanyifeng</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
