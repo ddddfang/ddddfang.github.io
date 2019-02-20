@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">306</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">320</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,10 +403,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>swig可以将c/c++编写的code生成其他语言(python / js / java / c# / perl / lisp / ….)的接口,本质是一个代码生成工具.</p>
-<p><a href="http://swig.org/svn.html" target="_blank" rel="noopener">swig install</a></p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>swig可以将c/c++编写的code生成其他语言(python / js / java / c# / perl / lisp / ….)的接口,本质是一个代码生成工具.</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="http://swig.org/svn.html" target="_blank" rel="noopener">swig install</a></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install automake</span><br><span class="line">$ sudo apt-get install flex bison</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/swig/swig.git</span><br><span class="line">$ <span class="built_in">cd</span> swig</span><br><span class="line">$ ./autogen.sh</span><br><span class="line">$ ./configure --prefix=/some/directory</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> SWIG=/opt/swig</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$SWIG</span>/bin</span><br></pre></td></tr></table></figure>
-<p>添加 add.c :</p>
+<h2 id="为c-c-代码添加python接口"><a href="#为c-c-代码添加python接口" class="headerlink" title="为c/c++代码添加python接口"></a>为c/c++代码添加python接口</h2><p>添加 add.c :</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//add.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"add.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello, in add\r\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>添加 add.h:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ADD_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ADD_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span>,<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
@@ -417,7 +417,7 @@ height:50vh;
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PUBLIC_FLAGS:=-g -O0 -Wall -shared -fPIC</span><br><span class="line">LDFLAGS = -L/opt/python-3.6.5/lib/ -lpython3.6m</span><br><span class="line">MODULE_INCLUDE = -I/opt/python-3.6.5/<span class="keyword">include</span>/python3.6m</span><br><span class="line"></span><br><span class="line">_add.so : add.c add.h add_wrap.c</span><br><span class="line">	gcc <span class="variable">$(PUBLIC_FLAGS)</span> <span class="variable">$(MODULE_INCLUDE)</span> <span class="variable">$(LDFLAGS)</span> -o <span class="variable">$@</span> <span class="variable">$^</span></span><br><span class="line">add_wrap.c : add.i</span><br><span class="line">	swig -python -py3 <span class="variable">$^</span></span><br><span class="line">clean :</span><br><span class="line">	-rm -rf _add.so add_wrap.c add.py</span><br></pre></td></tr></table></figure>
 <p>最后可以这样使用:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /opt/python-3.6.5/bin/python3.6</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">"./"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> _add <span class="keyword">import</span> *</span><br><span class="line">print(<span class="string">"3+4="</span> + str(add(<span class="number">3</span>,<span class="number">4</span>)) )</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.swig.org" target="_blank" rel="noopener">http://www.swig.org</a><br><a href="http://www.swig.org/tutorial.html" target="_blank" rel="noopener">http://www.swig.org/tutorial.html</a><br><a href="http://swig.org/svn.html" target="_blank" rel="noopener">http://swig.org/svn.html</a><br><a href="https://www.cnblogs.com/dda9/p/8612068.html" target="_blank" rel="noopener">https://www.cnblogs.com/dda9/p/8612068.html</a></p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="http://www.swig.org" target="_blank" rel="noopener">http://www.swig.org</a><br><a href="http://www.swig.org/tutorial.html" target="_blank" rel="noopener">http://www.swig.org/tutorial.html</a><br><a href="http://swig.org/svn.html" target="_blank" rel="noopener">http://swig.org/svn.html</a><br><a href="https://www.cnblogs.com/dda9/p/8612068.html" target="_blank" rel="noopener">https://www.cnblogs.com/dda9/p/8612068.html</a></p>
 
     </article>
     <!-- license  -->
@@ -426,7 +426,7 @@ height:50vh;
             <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
             </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/19/swig/">https://ddddfang.github.io/2019/02/19/swig/</a>
             </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 19th 2019, 7:10:20 pm</a>
-            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 20th 2019, 3:26:23 pm</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 20th 2019, 3:32:19 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -551,7 +551,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为c-c-代码添加python接口"><span class="toc-number">3.</span> <span class="toc-text">为c/c++代码添加python接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#refs"><span class="toc-number">4.</span> <span class="toc-text">refs</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -564,6 +564,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -1242,12 +1246,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/dd/">dd</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/disk/">disk ===> fdisk mount df</a>
         </li>
     
     
@@ -1257,12 +1261,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/xxd/">xxd</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/shell/">shell</a>
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href="/2019/01/23/xxd/">xxd</a>
         </li>
     
     
