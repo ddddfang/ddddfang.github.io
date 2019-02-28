@@ -472,7 +472,7 @@ height:50vh;
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> test</span><br><span class="line">test.f(<span class="number">2.0</span>)</span><br><span class="line">test.myfun(test.f)</span><br></pre></td></tr></table></figure>
 <p>Which solves almost all the problems in one go. This is even documented in the manual too, although there doesn’t seem to be any mention of %pythoncallback. So the previous four solutions are mostly just useful as examples of customising SWIG interfaces.</p>
 <p>There is still one case where solution 4 would be useful though - if you want to mix and match C and Python implemented callbacks you would need to implement a hybrid of these two. (Ideally you’d try and do the SWIG function pointer type conversion in your typemap and then iff that failed fallback to the PyCallable method instead).</p>
-<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="http://www.swig.org" target="_blank" rel="noopener">http://www.swig.org</a><br><a href="http://www.swig.org/tutorial.html" target="_blank" rel="noopener">http://www.swig.org/tutorial.html</a><br><a href="http://swig.org/svn.html" target="_blank" rel="noopener">http://swig.org/svn.html</a><br><a href="https://www.cnblogs.com/dda9/p/8612068.html" target="_blank" rel="noopener">https://www.cnblogs.com/dda9/p/8612068.html</a></p>
+<h2 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h2><p><a href="http://www.swig.org" target="_blank" rel="noopener">http://www.swig.org</a><br><a href="http://www.swig.org/tutorial.html" target="_blank" rel="noopener">http://www.swig.org/tutorial.html</a><br><a href="http://swig.org/svn.html" target="_blank" rel="noopener">http://swig.org/svn.html</a><br><a href="https://www.cnblogs.com/dda9/p/8612068.html" target="_blank" rel="noopener">https://www.cnblogs.com/dda9/p/8612068.html</a><br><a href="https://segmentfault.com/a/1190000013219667" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013219667</a></p>
 
     </article>
     <!-- license  -->
@@ -481,7 +481,7 @@ height:50vh;
             <p>原文作者：<a href="https://ddddfang.github.io">ddddfang</a>
             </p><p>原文链接：<a href="https://ddddfang.github.io/2019/02/19/swig/">https://ddddfang.github.io/2019/02/19/swig/</a>
             </p><p>发表日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 19th 2019, 7:10:20 pm</a>
-            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 26th 2019, 10:07:56 am</a>
+            </p><p>更新日期：<a href="https://ddddfang.github.io/2019/02/19/swig/">February 28th 2019, 10:03:44 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -1220,12 +1220,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/cmake/">cmake</a>
+            <span class="archive-post-date">01/30</span><a class="archive-post-title" href="/2019/01/30/caffe/">caffe</a>
         </li>
     
     
@@ -1350,19 +1350,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="binary-search"><span class="iconfont-archer">&#xe606;</span>binary-search</span>
     
-        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
-    
         <span class="sidebar-tag-name" data-tags="caffe"><span class="iconfont-archer">&#xe606;</span>caffe</span>
     
-        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
-    
-        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+        <span class="sidebar-tag-name" data-tags="bitmap"><span class="iconfont-archer">&#xe606;</span>bitmap</span>
     
         <span class="sidebar-tag-name" data-tags="common misc"><span class="iconfont-archer">&#xe606;</span>common misc</span>
     
         <span class="sidebar-tag-name" data-tags="makefile"><span class="iconfont-archer">&#xe606;</span>makefile</span>
     
+        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
+    
+        <span class="sidebar-tag-name" data-tags="单例模式"><span class="iconfont-archer">&#xe606;</span>单例模式</span>
+    
         <span class="sidebar-tag-name" data-tags="顺序容器"><span class="iconfont-archer">&#xe606;</span>顺序容器</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="宏"><span class="iconfont-archer">&#xe606;</span>宏</span>
     
@@ -1370,15 +1372,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="linux command"><span class="iconfont-archer">&#xe606;</span>linux command</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="docker"><span class="iconfont-archer">&#xe606;</span>docker</span>
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
-    
         <span class="sidebar-tag-name" data-tags="gdb"><span class="iconfont-archer">&#xe606;</span>gdb</span>
+    
+        <span class="sidebar-tag-name" data-tags="ffmpeg"><span class="iconfont-archer">&#xe606;</span>ffmpeg</span>
     
         <span class="sidebar-tag-name" data-tags="gitbook"><span class="iconfont-archer">&#xe606;</span>gitbook</span>
     
@@ -1386,11 +1386,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="printf 可变参数"><span class="iconfont-archer">&#xe606;</span>printf 可变参数</span>
     
-        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
+        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
     
         <span class="sidebar-tag-name" data-tags="static and dynamic library"><span class="iconfont-archer">&#xe606;</span>static and dynamic library</span>
     
-        <span class="sidebar-tag-name" data-tags="第k小的数"><span class="iconfont-archer">&#xe606;</span>第k小的数</span>
+        <span class="sidebar-tag-name" data-tags="ubuntu setup"><span class="iconfont-archer">&#xe606;</span>ubuntu setup</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
