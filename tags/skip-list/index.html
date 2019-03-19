@@ -346,25 +346,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/30/printf-可变参数/">
+        <a class="abstract-title" href="/2019/03/19/skip-list/">
             
-                <span>printf-可变参数</span>
+                <span>skip-list</span>
         </a>
         <div class="abstract-content">
-            12345typedef char *va_list;   //va_list就是个普通的指向char类型的指针而已#define _INTSIZEOF(n)   (  (sizeof(n)+sizeof(int)-1)&amp; ~(sizeof(int)-1)  ) //这是获取某个类型的长度，并按照int长度为边界对齐，不足4bytes补足，因为栈宽度为4bytes#define va_start(ap,v)  (ap=(va_list)&amp;v + _INTSIZEOF(v)) //这就是使ap指向v的以int长度为边界的后一个位置#define va_arg(ap, typ...
+            http://blog.csdn.net/ict2014/article/details/17394259类似 并联的链表，意图替代 红黑树 等 平衡树，与红黑树一样是一种 sorted set/map。 在类似排行榜的应用场景中很常见。插入、查找、删除 复杂度亦为 O(logN) （基于概率），内部排序。优势在于实现简单，不用rebalance。与普通链表最大区别在于 每个节点 随机 包含 x 个指向 后继结点的指针而不是固定一个，每次操作率先使用跨度最大的那个 next 指针来寻找后继节点。
+https://www.jianshu.com/p/fcd18946994e链表不可以使用二...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/19</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="common misc">common misc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="printf 可变参数">printf 可变参数</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="skip-list">skip-list</a>
     
 </div>
             
